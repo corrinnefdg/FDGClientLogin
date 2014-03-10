@@ -8,24 +8,23 @@ $(document).ready(function(){
 		$(".clientInfo").slideToggle("slow");
 	});
   
-  
-	  // sticky header
-	  var stickyNavTop = $('.header').offset().top;  
-		  
-		var stickyNav = function(){  
-			var scrollTop = $(window).scrollTop();  
-				   
-			if (scrollTop > stickyNavTop) {   
-				$('.header').addClass('sticky');  
-			} else {  
-				$('.header').removeClass('sticky');   
-			}  
-		};  
-	  
-		stickyNav();  
-		  
-		$(window).scroll(function() {  
-			stickyNav();  
-		});  
+	
+	// function to make the header shadow appear once the page is scrolled down
+	$(window).scroll(function() { 
+
+		//if window is scrolled any more than 0 the shadow appears
+		if($(window).scrollTop() > 0) 
+		{
+			if(!$(".header").hasClass('shadow'))
+			{
+				$(".header").addClass('shadow');
+			}
+		}
+		else
+		{
+			$('.header').removeClass('shadow');
+		}
+	});
+	
 	
 }); //end document.ready
