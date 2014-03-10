@@ -26,8 +26,8 @@
     	<h1>Prismatic</h1>
        <h2>Client Login</h2>
        
-       <form id="searchBox">
-          Search:<input type="search" name="search">
+       <form id="searchBox" action="search.php" method="post">
+          Search: <input type="text" name="find">
           <input type="submit">
        </form>
     </header>
@@ -43,13 +43,11 @@
         	
         	<form action="insert.php" method="post">
             	Client Name: <input type="text" name="inputName">
-              <br />
             	Type: <input type="text" name="inputType">
               	URL: <input type="text" name="inputUrl">
               <br />
               	Username: <input type="text" name="inputUsername">
               	Password: <input type="text" name="inputPassword">
-              <br />
               <input type="submit">
             	
             	<!-- <select>

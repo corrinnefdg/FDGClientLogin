@@ -16,7 +16,7 @@ body {
 		height: 100px;
 		width: 100%;
 		background-color: #CCC;
-		padding: 10px;
+		padding: 20px;
 		margin: 0;
 		z-index: 100;  
 	}
@@ -35,12 +35,11 @@ body {
 				margin: 0;
 			}
 			#searchBox {
-				float: right;
-				display: inline-block;
+				
 			}
 	
 	main {
-		margin-top: 150px;
+		margin-top: 175px;
 	}
 		.clientName {
 				background-color: #DDD;
