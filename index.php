@@ -26,7 +26,7 @@
     	<h1>Prismatic</h1>
        <h2>Client Login</h2>
        
-       <form id="searchBox" action="search.php" method="post">
+       <form id="searchBox" method="post" action="search.php">
           Search: <input type="text" name="find">
           <input type="submit">
        </form>

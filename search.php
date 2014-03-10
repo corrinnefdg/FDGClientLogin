@@ -9,6 +9,8 @@
 
 <?php
 
+	include('config.php');
+
 	echo "<h2>Search Results:</h2>";
 
 	//If they did not enter a search term we give them an error
@@ -17,32 +19,34 @@
 		exit;
 	}*/
 	
-	// define constants for connecting
-	define('DB_USER', 'test_user');
-	define('DB_PASSWORD', 'test');
-	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'client_login');
 	
-	// connect
-	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+	/* $find = $_POST['find'];
+	var_dump($find); */
 	
-	// check connection
-	if (mysqli_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	
+	
+	if (isset($_POST['find'])) {
+	// Filter
+	$find = ($_POST['find']);
+	var_dump($find);
+	
+	// Select statement
+	$search = "SELECT * FROM test WHERE client_name LIKE '%$find%'";
+	// Display
+	$result = mysql_query($search) or die('query did not work');
 	}
-	
-	
-	$find = $_POST['find'];
+	echo ($result);
 	
 	// We perform a bit of filtering
-	/* $find = strtoupper($find);
+	$find = strtoupper($find);
 	$find = strip_tags($find);
 	$find = trim ($find);
-		var_dump($find); */
+		var_dump($find); 
+		
 	//Now we search for our search term, in the field the user specified
 	$clientName = mysqli_query("SELECT * FROM test WHERE client_name LIKE '%$find%'");
-	
 	var_dump($clientName);
+	
 	//And we display the results
 	while($result = mysqli_fetch_array( $find ))
 	{
