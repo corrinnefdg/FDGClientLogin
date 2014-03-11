@@ -7,7 +7,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 2000px;
-	background-color: #CCC;
+	background-color: #FFEECC;
 }
 
 	.header {
@@ -15,23 +15,24 @@ body {
 		top: 0;
 		height: 100px;
 		width: 100%;
-		background-color: #CCC;
+		background-color: #FFEECC;
 		padding: 20px;
 		margin: 0;
-		z-index: 100;  
+		z-index: 100;
+		color: #FF6E06;
 	}
 		.shadow {  
 			box-shadow: 0 4px 10px -2px gray; 
 		}  
 	
 		header h1 {
-			color: #000;
+			color: #FF6E06;
 			margin: 0;
 			display: inline-block;
 		}
 			
 			header h2 {
-				color: #000;
+				color: #FF6E06;
 				margin: 0;
 			}
 			#searchBox {
@@ -43,24 +44,50 @@ body {
 		padding: 50px;
 	}
 		.clientName {
-				background-color: #DDD;
-				border: 1px solid #000;
+				background-color: #FF6E06;
+				border: 1px solid #FF6E06;
 				padding: 10px;
 				width: 960px;
 				margin: 0 auto;
 			}
 				.clientName h1 {
 					margin: 0;
+					color: #FFF;
 				}
 				
 		.clientInfo {
 			background-color: #EEE;
 			display: none;
 			width: 960px;
-			border-right: 1px solid #000;
-			border-bottom: 1px solid #000;
-			border-left: 1px solid #000;
+			border-right: 1px solid #FF6E06;
+			border-bottom: 1px solid #FF6E06;
+			border-left: 1px solid #FF6E06;
 			margin: 0 auto;
 			padding: 10px;
+			color: #555;
+		}
+		
+		.newClientName {
+			background-color: #B0E308;
+			border: 1px solid #B0E308;
+			padding: 10px;
+			width: 960px;
+			margin: 0 auto;
+		}
+				.newClientName h1 {
+					margin: 0;
+					color: #FFF;
+				}
+				
+		.newClientInfo {
+			background-color: #EEE;
+			display: none;
+			width: 960px;
+			border-right: 1px solid #B0E308;
+			border-bottom: 1px solid #B0E308;
+			border-left: 1px solid #B0E308;
+			margin: 0 auto;
+			padding: 10px;
+			color: #555;
 		}
 		

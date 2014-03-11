@@ -4,8 +4,11 @@
 $(document).ready(function(){
 	
 	// Client Name slider
-	$(".clientName").click(function(){
-		$(".clientInfo").slideToggle("slow");
+	$(".slideTitle").click(function(){
+		$(this).next(".slideInfo").slideToggle("slow");
+		
+		$(this).parent(".slideInfo").siblings().children().next().slideUp();
+       return false;
 	});
   
 	

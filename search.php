@@ -14,15 +14,7 @@
 <body>
 
 	<!-- header -->
-	<header class="header">
-    	<h1>Prismatic</h1>
-       <h2>Client Login</h2>
-       
-       <form id="searchBox" method="post" action="search.php">
-          Search: <input type="text" name="find">
-          <input type="submit">
-       </form>
-    </header>
+	<?php include('header.php'); ?>
 
 	<main>
 		<?php
@@ -48,7 +40,7 @@
                 }
             
                 // Select statement
-                $search = "SELECT * FROM test WHERE client_name LIKE '%$find%'";
+                $search = "SELECT * FROM test WHERE client_name LIKE '%$find%' ORDER BY client_name";
                 
                 // Display
                 $query_result = $con->query($search) or die('Query did not work.');
@@ -58,9 +50,6 @@
                 $find = '';
                 $query_result = [];
             }
-                
-            // Select from the DB anything that matches their search term
-            $clientName = mysqli_query("SELECT * FROM test WHERE client_name LIKE '%$find%'");
             
             // Remind them what they searched for
             echo "<p><strong>Searched For:</strong> " .$find. "</p>";

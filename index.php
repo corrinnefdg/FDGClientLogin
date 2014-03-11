@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Prismatic - Client Login</title>
+<title>Prismatic - Client Login List</title>
 
 <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
@@ -13,33 +13,54 @@
 
 <body>
 
-
-	<?php
-	
-		/* error reporting on */
-		error_reporting(E_ALL);
-	
-	?>
-
 	<!-- header -->
-	<header class="header">
-    	<h1>Prismatic</h1>
-       <h2>Client Login</h2>
-       
-       <form id="searchBox" method="post" action="search.php">
-          Search: <input type="text" name="find">
-          <input type="submit">
-       </form>
-    </header>
+	<?php include('header.php'); ?>
     
     
     <main>
-    	
-        <div class="clientName">
+    
+    	<!-- Add new client -->
+       <div class="newClientName slideTitle">
+       		<h1>Add New Client</h1>
+       </div>
+       
+       <section class="newClientInfo slideInfo">
+       		
+            <form action="insert.php" method="post">
+            	Client Name: <input type="text" name="inputName">
+            	Type: <input type="text" name="inputType">
+              	URL: <input type="text" name="inputUrl">
+              <br />
+              	Username: <input type="text" name="inputUsername">
+              	Password: <input type="text" name="inputPassword">
+              <input type="submit" name="saveButton" value="Save">
+            </form>
+            
+       </section>
+    
+    
+    	<?php
+		
+			include('config.php');
+			
+			$sql = "SELECT * FROM test";
+			$query = mysqli_query($sql);
+			
+			while($row = mysqli_fetch_array($query)) {
+				$clientName = $row['client_name'];
+				echo '<div class="clientName slideTitle"><h1>' .$clientName. '</h1></div>';
+			}
+			
+			echo $sql;
+			echo "meow";
+		
+		?>
+    	<!-- Client List -->	
+        <div class="clientName slideTitle">
         	<h1>Client Name</h1>
         </div>
         
-        <section class="clientInfo">
+        <section class="clientInfo slideInfo">
         	
         	<form action="insert.php" method="post">
             	Client Name: <input type="text" name="inputName">
@@ -48,7 +69,7 @@
               <br />
               	Username: <input type="text" name="inputUsername">
               	Password: <input type="text" name="inputPassword">
-              <input type="submit">
+              <input type="submit" name="saveButton" value="Save">
             	
             	<!-- <select>
                 	<option>Site URL</option>
