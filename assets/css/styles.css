@@ -39,7 +39,8 @@ body {
 			}
 	
 	main {
-		margin-top: 175px;
+		margin-top: 125px;
+		padding: 50px;
 	}
 		.clientName {
 				background-color: #DDD;

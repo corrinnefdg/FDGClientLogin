@@ -1,4 +1,5 @@
 <?php
+// gets the information from the form and puts it in the database
 
 	include('config.php');
 	
