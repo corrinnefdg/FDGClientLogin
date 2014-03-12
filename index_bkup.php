@@ -35,18 +35,31 @@
            </section>
        
 		<?php
+			
 			include('config.php');
 			
 			// Select statement
 			$select = "SELECT * FROM test ORDER BY client_name";
+				echo $select; 
 			
 			// Display
 			$q_result = $con->query($select) or die('Query did not work.');
+				
+			// Seeing if there are any matches
+			//$anymatches = mysqli_num_rows($q_result);
+				//echo $anymatches;
 			
-			// Looping through results to display each client
+			// Tryin' to loop through results and display
 			while($result = mysqli_fetch_array( $q_result )){
+				echo "<div class='ClientName slideTitle'>
+					<h1>".$result['client_name']."</h1>
+				</div>";	
+			}
+		
+			echo "words";
+		
 		?>
-			
+        
         <!-- Database generated client list -->
         <div class="clientName slideTitle">
         	<h1><?php echo $result['client_name']; ?></h1>
@@ -63,7 +76,48 @@
                 </form>
             </section>
             
-       <?php } ?> <!-- end PHP while loop -->
+       
+    	<!-- Temporary "get clients" button
+    	<form action="getclients.php" method="post">
+       		<input type="submit" name="getClients" value="Get Clients">
+       </form> -->
+
+
+    	<!-- Client List -->	
+        <div class="clientName slideTitle">
+        	<h1>Client Name</h1>
+        </div>
+            <section class="clientInfo slideInfo">
+                <form action="insert.php" method="post">
+                    Client Name: <input type="text" name="inputName">
+                    Type: <input type="text" name="inputType">
+                    URL: <input type="text" name="inputUrl">
+                  <br />
+                    Username: <input type="text" name="inputUsername">
+                    Password: <input type="text" name="inputPassword">
+                  <input type="submit" name="saveButton" value="Save">
+                    
+                    <!-- <select>
+                        <option>Site URL</option>
+                      <option>WordPress - Prismatic</option>
+                      <option>WordPress - Client</option>
+                      <option>FTP</option>
+                      <option>Database</option>
+                        <option>CPANEL</option>
+                      <option>Twitter</option>
+                      <option>Joomla</option>
+                      <option>Other</option>
+                      
+                      Social Media: Twitter, Instagram, Facebook
+                      Hosting: GoDaddy, Hostaway
+                      CMS: Joomla, Wordpress
+                      
+                      Mailchimp
+                      Flickr
+                      Youtube
+                  </select>-->
+               </form>
+            </section>
         
     </main>
 
