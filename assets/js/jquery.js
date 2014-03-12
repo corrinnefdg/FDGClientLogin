@@ -10,6 +10,15 @@ $(document).ready(function(){
 		$(this).parent(".slideInfo").siblings().children().next().slideUp();
        return false;
 	});
+	
+	
+	// "Add New" info slider
+	$(".slideNew").click(function(){
+		$(this).next(".addNewInfo").slideToggle("slow");
+		
+		$(this).parent(".addNewInfo").siblings().children().next().slideUp();
+       return false;
+	});
   
 	
 	// function to make the header shadow appear once the page is scrolled down

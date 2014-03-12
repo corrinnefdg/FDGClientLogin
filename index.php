@@ -52,15 +52,27 @@
         	<h1><?php echo $result['client_name']; ?></h1>
         </div>
             <section class="clientInfo slideInfo">
-                <form action="insert.php" method="post">
-                    Client Name: <input type="text" name="inputName">
-                    Type: <input type="text" name="inputType">
-                    URL: <input type="text" name="inputUrl">
-                  <br />
-                    Username: <input type="text" name="inputUsername">
-                    Password: <input type="text" name="inputPassword">
-                  <input type="submit" name="saveButton" value="Save">
-                </form>
+            	  <div class="clientEntry">
+                  	<ul>
+                    		<li><?php echo $result['type']; ?></li>
+                         <li><?php echo $result['url']; ?></li>
+                         <li><?php echo $result['username']; ?></li>
+                         <li><?php echo $result['password']; ?></li>
+                     </ul>
+                </div>
+                
+                <p class="addNew slideNew">Add New Entry</p>
+                    <div class="addNewInfo">
+                        <form action="insert.php" method="post">
+                            Client Name: <input type="text" name="inputName">
+                            Type: <input type="text" name="inputType">
+                            URL: <input type="text" name="inputUrl">
+                            <br />
+                            Username: <input type="text" name="inputUsername">
+                            Password: <input type="text" name="inputPassword">
+                            <input type="submit" name="saveButton" value="Save">
+                        </form>
+                    </div>
             </section>
             
        <?php } ?> <!-- end PHP while loop -->

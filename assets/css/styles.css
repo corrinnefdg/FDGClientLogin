@@ -66,6 +66,28 @@ body {
 			padding: 10px;
 			color: #555;
 		}
+			.clientEntry {
+				border-bottom: 1px dashed #bfb7ae;
+			}
+				.clientEntry ul {
+					list-style-type: none;
+				}
+					.clientEntry ul li {
+						display: inline;
+						background-color: #fff;
+						padding: 5px;
+						margin-right: 10px;
+						border: 1px dashed #bfb7ae;
+					}
+			.addNew {
+				background-color: #8cbc19;
+				padding: 10px;
+				border-radius: 10px;
+				width: 115px;
+			}
+				.addNewInfo {
+					display: none;
+				}
 		
 		.newClientName {
 			background-color: #8cbc19;
