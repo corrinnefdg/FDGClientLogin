@@ -43,26 +43,26 @@
 			
 			include('config.php');
 			
-			$sql = "SELECT * FROM test";
-			$query = mysqli_query($sql);
+			echo "<h1>Client:</h1><br />";	
 			
-			$row = mysqli_fetch_array($query);
-			echo $row[1];
+			// Select statement
+			$select = "SELECT * FROM test ORDER BY client_name";
+				echo $select; 
 			
-			foreach ($row as $clientItem=>$result){
-				echo $clientItem;
-				echo "stuff";
+			// Display
+			$q_result = $con->query($select) or die('Query did not work.');
+				echo $q_result;
+				
+			// Seeing if there are any matches
+			$anymatches = mysqli_num_rows($q_result);
+				echo $anymatches;
+			
+			
+			// Tryin' to loop through results and display
+			while($result = mysqli_fetch_array( $q_result )){
+				echo "<p><strong>".$result['client_name']."</strong></p>";
 			}
-			
-			while($row) {
-				echo $result;
-				$clientName = $row['client_name'];
-				echo $clientName;
-				echo '<div class="clientName slideTitle"><h1>' .$clientName. '</h1></div>';
-				echo "more words";
-			}
-			
-			//echo $sql;
+
 			echo "words";
 		
 		?>
