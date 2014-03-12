@@ -40,19 +40,30 @@
     
     
     	<?php
-		
+			
 			include('config.php');
 			
 			$sql = "SELECT * FROM test";
 			$query = mysqli_query($sql);
 			
-			while($row = mysqli_fetch_array($query)) {
-				$clientName = $row['client_name'];
-				echo '<div class="clientName slideTitle"><h1>' .$clientName. '</h1></div>';
+			$row = mysqli_fetch_array($query);
+			echo $row[1];
+			
+			foreach ($row as $clientItem=>$result){
+				echo $clientItem;
+				echo "stuff";
 			}
 			
-			echo $sql;
-			echo "meow";
+			while($row) {
+				echo $result;
+				$clientName = $row['client_name'];
+				echo $clientName;
+				echo '<div class="clientName slideTitle"><h1>' .$clientName. '</h1></div>';
+				echo "more words";
+			}
+			
+			//echo $sql;
+			echo "words";
 		
 		?>
     	<!-- Client List -->	

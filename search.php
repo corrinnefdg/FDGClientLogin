@@ -52,7 +52,7 @@
             }
             
             // Remind them what they searched for
-            echo "<p><strong>Searched For:</strong> " .$find. "</p>";
+            echo "<p>Searched For:<strong> " .$find. "</strong></p>";
             
             // Displays the number or results
             $anymatches = mysqli_num_rows($query_result);

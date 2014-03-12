@@ -68,8 +68,8 @@ body {
 		}
 		
 		.newClientName {
-			background-color: #B0E308;
-			border: 1px solid #B0E308;
+			background-color: #9ECC07;
+			border: 1px solid #9ECC07;
 			padding: 10px;
 			width: 960px;
 			margin: 0 auto;
@@ -83,9 +83,9 @@ body {
 			background-color: #EEE;
 			display: none;
 			width: 960px;
-			border-right: 1px solid #B0E308;
-			border-bottom: 1px solid #B0E308;
-			border-left: 1px solid #B0E308;
+			border-right: 1px solid #9ECC07;
+			border-bottom: 1px solid #9ECC07;
+			border-left: 1px solid #9ECC07;
 			margin: 0 auto;
 			padding: 10px;
 			color: #555;
