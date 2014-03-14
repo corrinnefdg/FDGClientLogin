@@ -47,31 +47,43 @@
 			
 			// Looping through results to display each client
 			while($result = mysqli_fetch_array( $q_result )){
-			/*
+
 				//fill the $client_list array with client information
 				//$client_list[0] = 2;
 				//$client_list['Client Name'] = 2;
 				$client_name = $result['client_name'];
 				$client_list[$client_name][] = $result;
-			}
 			
-			var_dump($client_list);
 			
-			foreach($result as $key => $value)
-			{*/
+				// var_dump($client_list);
+				foreach($client_list as $client_name => $client_records){
+					echo $client_name;
+					
+					foreach($client_records as $client_record){
+						echo $client_record;
+					/* 
+					foreach ($client_list as $client_name => $client_records)
+					{
+					//echo out the heading for the client's name
+					foreach($client_records as $client_record){
+					//echo out all the info
+					}
+					}
+					*/
+			
 		?>
 			
         <!-- Database generated client list -->
         <div class="clientName slideTitle">
-        	<h1><?php echo $result['client_name']; ?></h1>
+        	<h1><?php echo $client_name; ?></h1>
         </div>
             <section class="clientInfo slideInfo">
             	  <div class="clientEntry">
                   	<ul>
-                    		<li>Type:<p><?php echo $result['type']; ?></p></li>
-                         <li>URL:<p><?php echo $result['url']; ?></p></li>
-                         <li>Username:<p><?php echo $result['username']; ?></p></li>
-                         <li>Password:<p><?php echo $result['password']; ?></p></li>
+                    		<li>Type:<p><?php echo $client_record['type']; ?></p></li>
+                         <li>URL:<p><?php echo $client_record['url']; ?></p></li>
+                         <li>Username:<p><?php echo $client_record['username']; ?></p></li>
+                         <li>Password:<p><?php echo $client_record['password']; ?></p></li>
                      </ul>
                 </div>
                 
@@ -89,7 +101,7 @@
                     </div>
             </section>
             
-       <?php } ?> <!-- end PHP while loop -->
+       <?php }}} ?> <!-- end PHP while loop and foreach loops -->
         
     </main>
 

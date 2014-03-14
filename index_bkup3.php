@@ -54,6 +54,7 @@
 				$client_name = $result['client_name'];
 				$client_list[$client_name][] = $result;
 			
+			
 				// get each heading
 				foreach($client_list as $client_name => $client_records){
 					//echo $client_name;
@@ -64,7 +65,8 @@
                         <h1><?php echo $client_name; ?></h1>
                     </div>
                     <section class="clientInfo slideInfo">
-                      
+                      <div class="clientEntry">
+
                   <?php
 					
 					// get each entry
@@ -72,17 +74,17 @@
 						//echo $client_record;
 
 					?>
-                  <div class="clientEntry">
-                      <ul>
+                    
+                        <ul>
                     		<li>Type:<p><?php echo $client_record['type']; ?></p></li>
                          <li>URL:<p><?php echo $client_record['url']; ?></p></li>
                          <li>Username:<p><?php echo $client_record['username']; ?></p></li>
                          <li>Password:<p><?php echo $client_record['password']; ?></p></li>
 						</ul>
-                  </div>
+                  
             
        		<?php }} ?> <!-- end PHP foreach loops -->
-
+</div>
             <p class="addNew slideNew">Add New Entry</p>
                 <div class="addNewInfo">
                     <form action="insert.php" method="post">

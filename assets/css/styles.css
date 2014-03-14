@@ -13,7 +13,6 @@ body {
 	.header {
 		position: fixed;
 		top: 0;
-		height: 100px;
 		width: 100%;
 		background-color: #eae6df;
 		padding: 20px;
@@ -23,6 +22,7 @@ body {
 	}
 		.shadow {  
 			box-shadow: 0 4px 10px -2px gray; 
+			border-bottom: 1px solid gray;
 		}  
 	
 		header h1 {
@@ -30,7 +30,10 @@ body {
 			margin: 0;
 			display: inline-block;
 		}
-			
+			header h1 img {
+				height: 25%;
+				width: 25%;
+			}
 			header h2 {
 				color: #FF6E06;
 				margin: 0;
@@ -40,12 +43,13 @@ body {
 			}
 	
 	main {
-		margin-top: 125px;
+		margin-top: 100px;
 		padding: 50px;
 	}
 		.clientName {
 				background-color: #f26532;
 				border: 1px solid #f26532;
+				border-bottom: 1px solid #eae6df;
 				padding: 10px;
 				width: 960px;
 				margin: 0 auto;
@@ -74,16 +78,22 @@ body {
 				}
 					.clientEntry ul li {
 						display: inline;
-						background-color: #fff;
 						padding: 5px;
-						margin-right: 10px;
-						border: 1px dashed #bfb7ae;
 					}
+						.clientEntry ul li p {
+							background-color: #fff;
+							padding: 5px;
+							margin-right: 10px;
+							margin-left: 5px;
+							border: 1px dashed #bfb7ae;
+							display: inline;
+						}
 			.addNew {
 				background-color: #8cbc19;
 				padding: 10px;
-				border-radius: 10px;
+				border-radius: 5px;
 				width: 115px;
+				border: 1px solid #555;
 			}
 				.addNewInfo {
 					display: none;
@@ -92,6 +102,7 @@ body {
 		.newClientName {
 			background-color: #8cbc19;
 			border: 1px solid #8cbc19;
+			border-bottom: 1px solid #eae6df;
 			padding: 10px;
 			width: 960px;
 			margin: 0 auto;
