@@ -10,7 +10,7 @@
 	<header class="header">
     	<h1><img src="assets/images/prismatic.png" alt="Prismatic" /></h1>
        
-       <form id="searchBox" method="post" action="search.php">
+       <form id="searchBox" method="post" action="index.php">
           Search: <input type="text" name="find">
           <input type="submit">
        </form>

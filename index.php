@@ -14,7 +14,15 @@
 <body>
 
 	<!-- header -->
-	<?php include('header.php'); ?>
+	<?php //include('header.php'); ?>
+    <header class="header">
+    	<h1><img src="assets/images/prismatic.png" alt="Prismatic" /></h1>
+       
+       <form id="searchBox" method="post" action="">
+          Search: <input type="text" name="find">
+          <input type="submit">
+       </form>
+    </header>
     
    	<main>
     
@@ -43,7 +51,7 @@
 			// Display
 			$q_result = $con->query($select) or die('Query did not work.');
 			
-			$client_list = array(array());
+			$client_list = array();
 			
 			// Looping through results to display each client
 			while($result = mysqli_fetch_array( $q_result )){
@@ -53,35 +61,36 @@
 				//$client_list['Client Name'] = 2;
 				$client_name = $result['client_name'];
 				$client_list[$client_name][] = $result;
+			}
 			
-				// get each heading
-				foreach($client_list as $client_name => $client_records){
-					//echo $client_name;
-					
-					?>
-                    
-                    <div class="clientName slideTitle">
-                        <h1><?php echo $client_name; ?></h1>
-                    </div>
-                    <section class="clientInfo slideInfo">
-                      
-                  <?php
-					
-					// get each entry
-					foreach($client_records as $client_record){
-						//echo $client_record;
+			// get each heading
+			foreach($client_list as $client_name => $client_records){
+				//echo $client_name;
+				
+				?>
+				
+				<div class="clientName slideTitle">
+					<h1><?php echo $client_name; ?></h1>
+				</div>
+				<section class="clientInfo slideInfo">
+				  
+			  <?php
+				
+				// get each entry
+				foreach($client_records as $client_record){
+					//echo $client_record;
 
-					?>
-                  <div class="clientEntry">
-                      <ul>
-                    		<li>Type:<p><?php echo $client_record['type']; ?></p></li>
-                         <li>URL:<p><?php echo $client_record['url']; ?></p></li>
-                         <li>Username:<p><?php echo $client_record['username']; ?></p></li>
-                         <li>Password:<p><?php echo $client_record['password']; ?></p></li>
-						</ul>
-                  </div>
+				?>
+			  <div class="clientEntry">
+				  <ul>
+						<li>Type:<p><?php echo $client_record['type']; ?></p></li>
+					 <li>URL:<p><?php echo $client_record['url']; ?></p></li>
+					 <li>Username:<p><?php echo $client_record['username']; ?></p></li>
+					 <li>Password:<p><?php echo $client_record['password']; ?></p></li>
+					</ul>
+			  </div>
             
-       		<?php }} ?> <!-- end PHP foreach loops -->
+       		<?php } ?> <!-- end PHP foreach loop -->
 
             <p class="addNew slideNew">Add New Entry</p>
                 <div class="addNewInfo">
@@ -96,7 +105,7 @@
                     </form>
                 </div>
         </section>
-      <?php } ?>
+      <?php } ?> <!-- end PHP foreach loop -->
         
     </main>
 
