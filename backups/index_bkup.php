@@ -103,10 +103,18 @@
                     <li>URL:<p><?php echo $client_record['url']; ?></p></li>
                     <li>Username:<p><?php echo $client_record['username']; ?></p></li>
                     <li>Password:<p><?php echo $client_record['password']; ?></p></li>
+                    <li>
+                      	<?php 
+								echo "<form action='delete.php' method='post'>";
+									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+									echo "<input type='submit' name='delete' value='Delete Entry' />";
+							  	echo "</form>";
+                          ?>
+					  </li>
                   </ul>
                </div>
                
-               <?php } ?> <!-- end PHP foreach loop -->
+               <?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
                
                  <p class="addNew slideNew">Add New Entry</p>
                     <div class="addNewInfo">
@@ -121,22 +129,9 @@
                         </form>
                     </div>
         	</section>
-		<?php } ?> <!-- end PHP foreach loop -->
+		<?php } ?> <!-- end PHP foreach loop creating each Client Name section -->
     	<!-- End Search -->
-        
-        
-       <!-- DELETE ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   		
-			
-	   ?>
-       
-       
-       <!-- EDIT ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   ?>
+
         
         
     	<!-- ADD NEW CLIENT =============================================== -->
@@ -197,68 +192,50 @@
 					 	<li>URL:<p><?php echo $client_record['url']; ?></p></li>
 					 	<li>Username:<p><?php echo $client_record['username']; ?></p></li>
 					 	<li>Password:<p><?php echo $client_record['password']; ?></p></li>
-                      
-                      <li><a href="">Edit Entry</a></li>
-                      <li><?php  //trying to delete crap 
-					  			// make a link like: 
-								//echo '<a href="admin.php?action=delete&id=$id">Delete this!</a>'; 
-									
-								// if delete was requested AND an id is present... 
-								//if(($_GET['action'] == 'delete') && isset($_GET['id'])) { 
-								
-									//$sql = mysql_query("DELETE FROM table WHERE id = '".$_GET['id']."'"); 
-								
-									//if($sql) { 
-									
-										//echo 'Record deleted!'; 
-									
-									//} 
-									
-								//}  
-								// end trying crap
-								
-								//client_record['id']
-								echo '<form id="form_'.$client_record['id'].'" method="post">
-							  		<input type="hidden" name="'.$client_record['id'].'" value="'.$client_record['id'].'" />
-							  		<input type="submit" name="delete_'.$client_record['id'].'" value="delete" />
-							  		</form>';
-								
-									
-					  			//while ($row = mysql_fetch_assoc($items)) {
-									//echo '
-									//<form action="" method="post">
-										//<input name="delete['.$client_record['id'].']" type="checkbox">
-										//<input type="submit" name="deleteButton" value="Delete">
-									//</form>';
-								//}
-					  
-								$delete = $_POST['delete_'.$client_record['id']];
-				
-								foreach($delete as $id => $value){
-									$id = mysqli_real_escape_string($id);
-									mysqli_query("DELETE FROM test WHERE id = ".$client_record['id']);
-									//echo $testme;
-								}
-							?>Delete Entry</li>
+                     	<li><!-- "Delete Entry" button -->
+                      	<?php 
+								echo "<form action='delete.php' method='post'>";
+									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+									echo "<input type='submit' name='delete' value='Delete Entry' />";
+							  	echo "</form>";
+                          ?>
+						</li>
+                     	<li><!-- "Edit Entry" button -->
+                        <?php
+								// button to enable editing of the fields
+								echo "<form>";
+									echo "<input id='inp' type='text' disabled>";
+									echo "<input id='edit' type='button' value='Edit Entry'>";
+								echo "</form>";
+								// button to save edits
+								echo "<form action='edit.php' method='post'>";
+									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+									echo "<input type='submit' name='edit' value='Save Changes' />";
+							  	echo "</form>";
+						   ?>
+                      </li>
 				  </ul>
 			  </div>
             
-       		<?php } ?> <!-- end PHP foreach loop -->
+       		<?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
 
             <p class="addNew slideNew">Add New Entry</p>
                 <div class="addNewInfo">
                     <form action="insert.php" method="post">
-                        Client Name: <input type="text" name="inputName">
+                        <?php
+                        		echo "<input type='hidden' name='inputName' value='".$client_name."'>";
+								// Hidden field inputs the client_name automatically for consistency
+						   ?>
                         Type: <input type="text" name="inputType">
                         URL: <input type="text" name="inputUrl">
-                        <br />
                         Username: <input type="text" name="inputUsername">
                         Password: <input type="text" name="inputPassword">
                         <input type="submit" name="saveButton" value="Save">
                     </form>
                 </div>
         </section>
-      <?php } ?> <!-- end PHP foreach loop -->
+        
+      <?php } ?> <!-- end PHP foreach loop for creating each Client Name section -->
         
     </main>
 

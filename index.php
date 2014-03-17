@@ -114,7 +114,7 @@
                   </ul>
                </div>
                
-               <?php } ?> <!-- end PHP foreach loop -->
+               <?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
                
                  <p class="addNew slideNew">Add New Entry</p>
                     <div class="addNewInfo">
@@ -129,22 +129,9 @@
                         </form>
                     </div>
         	</section>
-		<?php } ?> <!-- end PHP foreach loop -->
+		<?php } ?> <!-- end PHP foreach loop creating each Client Name section -->
     	<!-- End Search -->
-        
-        
-       <!-- DELETE ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   		
-			
-	   ?>
-       
-       
-       <!-- EDIT ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   ?>
+
         
         
     	<!-- ADD NEW CLIENT =============================================== -->
@@ -200,20 +187,37 @@
 
 				?>
 			  <div class="clientEntry">
-				  <ul>
-						<li>Type:<p><?php echo $client_record['type']; ?></p></li>
-					 	<li>URL:<p><?php echo $client_record['url']; ?></p></li>
-					 	<li>Username:<p><?php echo $client_record['username']; ?></p></li>
-					 	<li>Password:<p><?php echo $client_record['password']; ?></p></li>
-                     	<li><!-- "Delete Entry" button -->
-                      	<?php 
-								echo "<form action='delete.php' method='post'>";
-									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
-									echo "<input type='submit' name='delete' value='Delete Entry' />";
-							  	echo "</form>";
-                          ?>
-						</li>
-				  </ul>
+              	  <?php
+                     echo "<form>";
+                            echo "<input type='text' value='".$client_record['type']."' disabled />";
+                            echo "<input type='text' value='".$client_record['url']."' disabled />";
+                            echo "<input type='text' value='".$client_record['username']."' disabled />";
+                            echo "<input type='text' value='".$client_record['password']."' disabled />";
+                    echo "</form>";
+                 ?>
+                 
+                <!-- "Edit Entry" button -->
+                <?php
+                    // button to enable editing of the fields
+                    echo "<form>";
+                        echo "<input id='inp' type='text' disabled />";
+                        echo "<input id='edit' type='button' value='Edit Entry' />";
+                    echo "</form>";
+					
+                    // button to save edits
+                    echo "<form action='edit.php' method='post'>";
+                        echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+                        echo "<input type='submit' name='edit' value='Save Changes' />";
+                    echo "</form>";
+               ?>
+                     
+                <!-- "Delete Entry" button -->
+            	  <?php 
+                    echo "<form action='delete.php' method='post'>";
+                        echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+                        echo "<input type='submit' name='delete' value='Delete Entry' />";
+                    echo "</form>";
+                ?>
 			  </div>
             
        		<?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
@@ -227,7 +231,6 @@
 						   ?>
                         Type: <input type="text" name="inputType">
                         URL: <input type="text" name="inputUrl">
-                        <br />
                         Username: <input type="text" name="inputUsername">
                         Password: <input type="text" name="inputPassword">
                         <input type="submit" name="saveButton" value="Save">

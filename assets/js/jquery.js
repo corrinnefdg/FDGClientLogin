@@ -39,4 +39,13 @@ $(document).ready(function(){
 	});
 	
 	
+	// make form fields editable
+	var el  = document.getElementById('edit');
+	var inp = document.getElementById('inp');
+	el.addEventListener('click', function(){
+		inp.disabled = false;
+		inp.focus(); // set the focus on the editable field
+	});
+	
+	
 }); //end document.ready
