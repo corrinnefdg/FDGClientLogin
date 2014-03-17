@@ -29,7 +29,7 @@
 		include('config.php');
 	?>
     
-    <!-- SEARCH FUNCTION =============================================== -->
+    <!-- Search function -->
     <?php
 
 		if (isset($_POST['find'])) {
@@ -64,8 +64,7 @@
 				echo "<p>Sorry, but we can not find an entry to match your query.</p>";
 			}
 			else {
-				// echo "<p>Found " .$anymatches. " matches for " .$find. ".</p>"; 
-				// fix this for client_name
+				echo "<p>Found " .$anymatches. " matches for " .$find. ".</p>";
 			}
 		}
 		else
@@ -75,39 +74,22 @@
 		}
 		
 		//And we display the results
-		$client_list = array();
-			
-		// Looping through results to display each client
-		while($result = mysqli_fetch_array( $query_result )){
-
-			//fill the $client_list array with client information
-			$client_name = $result['client_name'];
-			$client_list[$client_name][] = $result;
-		}
-			// get each heading
-			foreach($client_list as $client_name => $client_records){
-				?>
+		while($result = mysqli_fetch_array( $query_result ))
+		{
+			?>
            
            <div class="clientName slideTitle">
-                <h1><?php echo $client_name; ?></h1>
+                <h1><?php echo $result['client_name']; ?></h1>
             </div>
             <section class="clientInfo slideInfo">
-            
-            <?php
-			 // get each entry
-				foreach($client_records as $client_record){
-			?>
                 <div class="clientEntry">
                   <ul>
-                    <li>Type:<p><?php echo $client_record['type']; ?></p></li>
-                    <li>URL:<p><?php echo $client_record['url']; ?></p></li>
-                    <li>Username:<p><?php echo $client_record['username']; ?></p></li>
-                    <li>Password:<p><?php echo $client_record['password']; ?></p></li>
+                    <li>Type:<p><?php echo $result['type']; ?></p></li>
+                    <li>URL:<p><?php echo $result['url']; ?></p></li>
+                    <li>Username:<p><?php echo $result['username']; ?></p></li>
+                    <li>Password:<p><?php echo $result['password']; ?></p></li>
                   </ul>
                </div>
-               
-               <?php } ?> <!-- end PHP foreach loop -->
-               
                  <p class="addNew slideNew">Add New Entry</p>
                     <div class="addNewInfo">
                         <form action="insert.php" method="post">
@@ -121,25 +103,11 @@
                         </form>
                     </div>
         	</section>
-		<?php } ?> <!-- end PHP foreach loop -->
+		<?php } ?>
     	<!-- End Search -->
         
         
-       <!-- DELETE ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   		
-			
-	   ?>
-       
-       
-       <!-- EDIT ENTRY FUNCTION =============================================== -->
-       <?php
-	   
-	   ?>
-        
-        
-    	<!-- ADD NEW CLIENT =============================================== -->
+    	<!-- Add new client -->
        <div class="newClientName slideTitle">
        		<h1>Add New Client</h1>
        </div>
@@ -156,7 +124,6 @@
            </section>
            
        
-       <!-- CLIENT LIST=============================================== -->
 		<?php
 
 			// Select statement
@@ -197,38 +164,6 @@
 					 	<li>URL:<p><?php echo $client_record['url']; ?></p></li>
 					 	<li>Username:<p><?php echo $client_record['username']; ?></p></li>
 					 	<li>Password:<p><?php echo $client_record['password']; ?></p></li>
-                      
-                      <li><a href="">Edit Entry</a></li>
-                      <li><?php  //trying to delete crap 
-					  			// make a link like: 
-								//echo '<a href="admin.php?action=delete&id=$id">Delete this!</a>'; 
-									
-								// if delete was requested AND an id is present... 
-								//if(($_GET['action'] == 'delete') && isset($_GET['id'])) { 
-								
-									//$sql = mysql_query("DELETE FROM table WHERE id = '".$_GET['id']."'"); 
-								
-									//if($sql) { 
-									
-									//echo 'Record deleted!'; 
-									
-									//} 
-									
-								//}  
-								// end trying crap
-									
-					  			while ($row = mysql_fetch_assoc($items))
-								{
-									echo '<input name="delete['.$row['id'].']" type="checkbox">';
-								}
-					  
-								$delete = $_POST['delete'];
-				
-								foreach($delete as $id => $value){
-									$id = mysql_real_escape_string($id);
-									mysql_query("DELETE FROM table_name WHERE id = $id");
-								}
-							?><a href="">Delete Entry</a></li>
 				  </ul>
 			  </div>
             
