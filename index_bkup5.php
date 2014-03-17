@@ -103,14 +103,6 @@
                     <li>URL:<p><?php echo $client_record['url']; ?></p></li>
                     <li>Username:<p><?php echo $client_record['username']; ?></p></li>
                     <li>Password:<p><?php echo $client_record['password']; ?></p></li>
-                    <li>
-                      	<?php 
-								echo "<form action='delete.php' method='post'>";
-									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
-									echo "<input type='submit' name='delete' value='Delete Entry' />";
-							  	echo "</form>";
-                          ?>
-					  </li>
                   </ul>
                </div>
                
@@ -205,26 +197,58 @@
 					 	<li>URL:<p><?php echo $client_record['url']; ?></p></li>
 					 	<li>Username:<p><?php echo $client_record['username']; ?></p></li>
 					 	<li>Password:<p><?php echo $client_record['password']; ?></p></li>
-                     	<li><!-- "Delete Entry" button -->
-                      	<?php 
-								echo "<form action='delete.php' method='post'>";
-									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
-									echo "<input type='submit' name='delete' value='Delete Entry' />";
-							  	echo "</form>";
-                          ?>
-						</li>
+                      
+                      <li><a href="">Edit Entry</a></li>
+                      <li><?php  //trying to delete crap 
+					  			// make a link like: 
+								//echo '<a href="admin.php?action=delete&id=$id">Delete this!</a>'; 
+									
+								// if delete was requested AND an id is present... 
+								//if(($_GET['action'] == 'delete') && isset($_GET['id'])) { 
+								
+									//$sql = mysql_query("DELETE FROM table WHERE id = '".$_GET['id']."'"); 
+								
+									//if($sql) { 
+									
+										//echo 'Record deleted!'; 
+									
+									//} 
+									
+								//}  
+								// end trying crap
+								
+								//client_record['id']
+								echo '<form id="form_'.$client_record['id'].'" method="post">
+							  		<input type="hidden" name="'.$client_record['id'].'" value="'.$client_record['id'].'" />
+							  		<input type="submit" name="delete_'.$client_record['id'].'" value="delete" />
+							  		</form>';
+								
+									
+					  			//while ($row = mysql_fetch_assoc($items)) {
+									//echo '
+									//<form action="" method="post">
+										//<input name="delete['.$client_record['id'].']" type="checkbox">
+										//<input type="submit" name="deleteButton" value="Delete">
+									//</form>';
+								//}
+					  
+								$delete = $_POST['delete_'.$client_record['id']];
+				
+								foreach($delete as $id => $value){
+									$id = mysqli_real_escape_string($id);
+									mysqli_query("DELETE FROM test WHERE id = ".$client_record['id']);
+									//echo $testme;
+								}
+							?>Delete Entry</li>
 				  </ul>
 			  </div>
             
-       		<?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
+       		<?php } ?> <!-- end PHP foreach loop -->
 
             <p class="addNew slideNew">Add New Entry</p>
                 <div class="addNewInfo">
                     <form action="insert.php" method="post">
-                        <?php
-                        		echo "<input type='hidden' name='inputName' value='".$client_name."'>";
-								// Hidden field inputs the client_name automatically for consistency
-						   ?>
+                        Client Name: <input type="text" name="inputName">
                         Type: <input type="text" name="inputType">
                         URL: <input type="text" name="inputUrl">
                         <br />
@@ -234,8 +258,7 @@
                     </form>
                 </div>
         </section>
-        
-      <?php } ?> <!-- end PHP foreach loop for creating each Client Name section -->
+      <?php } ?> <!-- end PHP foreach loop -->
         
     </main>
 
