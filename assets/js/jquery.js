@@ -40,11 +40,14 @@ $(document).ready(function(){
 	
 	
 	// make form fields editable
-	var el  = document.getElementById('edit');
-	var inp = document.getElementById('inp');
-	el.addEventListener('click', function(){
-		inp.disabled = false;
-		inp.focus(); // set the focus on the editable field
+	$(".editButton").click(function(){
+		$(this).siblings().removeAttr('disabled');
+	});
+	
+	// trying to cancel edit too - doesn't work
+	// might toggle above code instead
+	$(".cancelButton").click(function(){
+		$(this).siblings().attr('disabled');
 	});
 	
 	

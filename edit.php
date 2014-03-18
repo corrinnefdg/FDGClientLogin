@@ -1,12 +1,5 @@
 <?php
 
-	//UPDATE Customers
-	//SET ContactName='Alfred Schmidt', City='Hamburg'
-	//WHERE CustomerName='Alfreds Futterkiste';
-	
-	// http://stackoverflow.com/questions/18386495/make-form-fields-editable-on-button-click
-	
-	
 	include('config.php');
 
 	if (isset($_POST['edit'])) {

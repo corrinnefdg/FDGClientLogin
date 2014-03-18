@@ -140,12 +140,12 @@
        </div>
            <section class="newClientInfo slideInfo">
                 <form action="insert.php" method="post">
-                    Client Name: <input type="text" name="inputName">
-                    Type: <input type="text" name="inputType">
-                    URL: <input type="text" name="inputUrl">
+                    <label for='cli_name'>Client Name:</label><input id="cli_name" type="text" name="inputName">
+                    <label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
+                    <label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
                     <br />
-                    Username: <input type="text" name="inputUsername">
-                    Password: <input type="text" name="inputPassword">
+                    <label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
+                    <label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
                     <input type="submit" name="saveButton" value="Save">
                 </form>
            </section>
@@ -188,18 +188,20 @@
 				?>
 			  <div class="clientEntry">
               	  <?php
-                     echo "<form action='edit.php' method='post'>";
+                     echo "<form class='cli_entry' action='edit.php' method='post'>";
                             echo "<label for='cli_type'>Type:</label>
-									<input type='text' id='cli_type' name='clientRecordType' value='".$client_record['type']."' />";
+									<input type='text' id='cli_type' class='makeEdit' name='clientRecordType' value='".$client_record['type']."' disabled />";
                             echo "<label for='cli_url'>URL:</label>
-									<input type='text' id='cli_url' name='clientRecordUrl' value='".$client_record['url']."'  />";
+									<input type='text' id='cli_url' class='makeEdit' name='clientRecordUrl' value='".$client_record['url']."' disabled  />";
                             echo "<label for='cli_user'>Username:</label>
-									<input type='text' id='cli_user' name='clientRecordUsername' value='".$client_record['username']."' />";
+									<input type='text' id='cli_user' class='makeEdit' name='clientRecordUsername' value='".$client_record['username']."' disabled />";
                             echo "<label for='cli_pass'>Password:</label>
-									<input type='text' id='cli_pass' name='clientRecordPassword' value='".$client_record['password']."' />";
+									<input type='text' id='cli_pass' class='makeEdit' name='clientRecordPassword' value='".$client_record['password']."' disabled />";
 								
 								// hidden ID field to tell database what row it is
 							   echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
+							   echo "<input id='edit' class='editButton' type='button' value='Edit Entry' />";
+							   echo "<input id='cancel' class='cancelButton' type='button' value='Cancel Edit' />";
                         	   echo "<input type='submit' name='edit' value='Save Changes' />";
                     echo "</form>";
                  ?>
