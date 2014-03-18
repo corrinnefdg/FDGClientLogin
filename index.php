@@ -199,10 +199,10 @@
                 <!-- "Edit Entry" button -->
                 <?php
                     // button to enable editing of the fields
-                    echo "<form>";
+                    /* echo "<form>";
                         echo "<input id='inp' type='text' disabled />";
                         echo "<input id='edit' type='button' value='Edit Entry' />";
-                    echo "</form>";
+                    echo "</form>"; */
 					
                     // button to save edits
                     echo "<form action='edit.php' method='post'>";
@@ -214,7 +214,7 @@
                 <!-- "Delete Entry" button -->
             	  <?php 
                     echo "<form action='delete.php' method='post'>";
-                        echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+                        echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
                         echo "<input type='submit' name='delete' value='Delete Entry' />";
                     echo "</form>";
                 ?>
