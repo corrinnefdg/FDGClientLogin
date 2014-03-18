@@ -2,7 +2,6 @@
 	include('config.php');
 
 	if (isset($_POST['delete'])) {
-		echo(print_r($_POST));
 		
 		// get value from hidden field in form
 		$cid = $_POST['clientRecordId'];

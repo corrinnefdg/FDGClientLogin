@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Prismatic - Client Login List</title>
 
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -86,17 +87,17 @@
 		}
 			// get each heading
 			foreach($client_list as $client_name => $client_records){
-				?>
+		?>
            
            <div class="clientName slideTitle">
                 <h1><?php echo $client_name; ?></h1>
-            </div>
-            <section class="clientInfo slideInfo">
+           </div>
+           <section class="clientInfo slideInfo">
             
             <?php
-			 // get each entry
+			 	// get each entry
 				foreach($client_records as $client_record){
-			?>
+			 ?>
                 <div class="clientEntry">
                   <ul>
                     <li>Type:<p><?php echo $client_record['type']; ?></p></li>
@@ -104,12 +105,10 @@
                     <li>Username:<p><?php echo $client_record['username']; ?></p></li>
                     <li>Password:<p><?php echo $client_record['password']; ?></p></li>
                     <li>
-                      	<?php 
-								echo "<form action='delete.php' method='post'>";
-									echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
-									echo "<input type='submit' name='delete' value='Delete Entry' />";
-							  	echo "</form>";
-                          ?>
+                    		<form action="delete.php" method="post">
+								<input type="hidden" name="clientRecordId" value="<?php echo $cid ?>" />
+								<input type='submit' name='delete' value='Delete Entry' />
+							</form>
 					  </li>
                   </ul>
                </div>
@@ -151,6 +150,7 @@
            </section>
            
        
+       
        <!-- CLIENT LIST=============================================== -->
 		<?php
 
@@ -187,41 +187,36 @@
 
 				?>
 			  <div class="clientEntry">
-              	  <?php
-                     echo "<form class='cli_entry' action='edit.php' method='post'>";
-                            echo "<label for='cli_type'>Type:</label>
-									<input type='text' id='cli_type' class='makeEdit' name='clientRecordType' value='".$client_record['type']."' disabled />";
-                            echo "<label for='cli_url'>URL:</label>
-									<input type='text' id='cli_url' class='makeEdit' name='clientRecordUrl' value='".$client_record['url']."' disabled  />";
-                            echo "<label for='cli_user'>Username:</label>
-									<input type='text' id='cli_user' class='makeEdit' name='clientRecordUsername' value='".$client_record['username']."' disabled />";
-                            echo "<label for='cli_pass'>Password:</label>
-									<input type='text' id='cli_pass' class='makeEdit' name='clientRecordPassword' value='".$client_record['password']."' disabled />";
-								
-								// hidden ID field to tell database what row it is
-							   echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
-							   echo "<input id='edit' class='editButton' type='button' value='Edit Entry' />";
-							   echo "<input id='cancel' class='cancelButton' type='button' value='Cancel Edit' />";
-                        	   echo "<input type='submit' name='edit' value='Save Changes' />";
-                    echo "</form>";
-                 ?>
-                 
-                <!-- "Edit Entry" button -->
-                <?php
-                    // button to enable editing of the fields
-                    /*echo "<form>";
-                        echo "<input id='inp' type='text' disabled />";
-                        echo "<input id='edit' type='button' value='Edit Entry' />";
-                    echo "</form>"; */
-               ?>
+              	  <form class="cli_entry" action="edit.php" method="post">
+                    <!-- <div class="leftcol"> -->
+                        <label for="cli_type">Type:</label>
+                               <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
+                        <label for="cli_url">URL:</label>
+                               <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled  />
+                      <!-- </div> -->
+                        
+                      <!-- <div class="centercol"> -->
+                        <label for="cli_user">Username:</label>
+                                <input type="text" id="cli_user" class="makeEdit" name="clientRecordUsername" value="<?php echo $client_record['username'] ?>" disabled />
+                        <label for="cli_pass">Password:</label>
+                                <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPassword" value="<?php echo $client_record['password'] ?>" disabled />
+                       <!-- </div> -->
+                            
+                       <!-- <div class="rightcol"> -->
+                           <!-- hidden ID field to tell database what row it is -->
+                           <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
+                           <input id="edit" class="editButton" type="button" value="Edit Entry" />
+                           <input id="cancel" class="cancelButton" type="button" value="Cancel Edit" />
+                           <input type="submit" name="edit" value="Save Changes" />
+                       <!-- </div> -->
+                </form>
+
                      
                 <!-- "Delete Entry" button -->
-            	  <?php 
-                    echo "<form action='delete.php' method='post'>";
-                        echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
-                        echo "<input type='submit' name='delete' value='Delete Entry' />";
-                    echo "</form>";
-                ?>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
+                    <input type="submit" name="delete" value="Delete Entry" />
+                </form>
 			  </div>
             
        		<?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
@@ -229,10 +224,8 @@
             <p class="addNew slideNew">Add New Entry</p>
                 <div class="addNewInfo">
                     <form action="insert.php" method="post">
-                        <?php
-                        		echo "<input type='hidden' name='inputName' value='".$client_name."'>";
-								// Hidden field inputs the client_name automatically for consistency
-						   ?>
+                        <!-- Hidden field inputs the client_name automatically for consistency -->
+                        <input type="hidden" name="inputName" value="<?php echo $client_name ?>">
                         <label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
                         <label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
                         <label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">

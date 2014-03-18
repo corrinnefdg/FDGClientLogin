@@ -57,6 +57,7 @@ body {
 				.clientName h1 {
 					margin: 0;
 					color: #FFF;
+					font-size: 30px;
 				}
 				
 		.clientInfo {
@@ -72,22 +73,49 @@ body {
 		}
 			.clientEntry {
 				border-bottom: 1px dashed #bfb7ae;
+				padding: 0px 20px 20px 20px;
 			}
-				.clientEntry ul {
-					list-style-type: none;
+
+			.leftcol {
+				display: inline-block;
+				width: 42%;
+				/* border: 1px solid black; */
+			}
+				.leftcol input {
+					width: 350px;
+					height: 30px;
+					font-size: 16px;
 				}
-					.clientEntry ul li {
-						display: inline;
-						padding: 5px;
+			.centercol {
+				display: inline-block;
+				width: 42%;
+				/* border: 1px solid black; */
+			}
+				.centercol input {
+					width: 350px;
+					height: 30px;
+					font-size: 16px;
+				}
+			.rightcol {
+				display: inline-block;
+				width: 15%;
+				/* border: 1px solid black; */
+			}
+				.rightcol input {
+					width: 135px;
+					height: 30px;
+					font-size: 16px;
+				}
+					input {
+						box-sizing: border-box;
+						display: block;
 					}
-						.clientEntry ul li p {
-							background-color: #fff;
-							padding: 5px;
-							margin-right: 10px;
-							margin-left: 5px;
-							border: 1px dashed #bfb7ae;
-							display: inline;
-						}
+					label {
+						display: block;
+						color: gray;
+						margin-top: 15px;
+					}
+				
 			.addNew {
 				background-color: #8cbc19;
 				padding: 10px;
@@ -110,6 +138,7 @@ body {
 				.newClientName h1 {
 					margin: 0;
 					color: #FFF;
+					font-size: 30px;
 				}
 				
 		.newClientInfo {
