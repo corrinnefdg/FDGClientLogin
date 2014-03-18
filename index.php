@@ -188,13 +188,19 @@
 				?>
 			  <div class="clientEntry">
               	  <?php
-                     echo "<form>";
-                            echo "<input type='text' name='clientRecordType' value='".$client_record['type']."'  />";
-                            echo "<input type='text' name='clientRecordUrl' value='".$client_record['url']."'  />";
-                            echo "<input type='text' name='clientRecordUsername' value='".$client_record['username']."'  />";
-                            echo "<input type='text' name='clientRecordPassword' value='".$client_record['password']."'  />";
+                     echo "<form action='edit.php' method='post'>";
+                            echo "<label for='cli_type'>Type:</label>
+									<input type='text' id='cli_type' name='clientRecordType' value='".$client_record['type']."' />";
+                            echo "<label for='cli_url'>URL:</label>
+									<input type='text' id='cli_url' name='clientRecordUrl' value='".$client_record['url']."'  />";
+                            echo "<label for='cli_user'>Username:</label>
+									<input type='text' id='cli_user' name='clientRecordUsername' value='".$client_record['username']."' />";
+                            echo "<label for='cli_pass'>Password:</label>
+									<input type='text' id='cli_pass' name='clientRecordPassword' value='".$client_record['password']."' />";
 								
-							   
+								// hidden ID field to tell database what row it is
+							   echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
+                        	   echo "<input type='submit' name='edit' value='Save Changes' />";
                     echo "</form>";
                  ?>
                  
@@ -205,12 +211,6 @@
                         echo "<input id='inp' type='text' disabled />";
                         echo "<input id='edit' type='button' value='Edit Entry' />";
                     echo "</form>"; */
-					
-                    // button to save edits
-                    /*echo "<form action='edit.php' method='post'>";
-                        echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
-                        echo "<input type='submit' name='edit' value='Save Changes' />";
-                    echo "</form>";*/
                ?>
                      
                 <!-- "Delete Entry" button -->
@@ -231,10 +231,10 @@
                         		echo "<input type='hidden' name='inputName' value='".$client_name."'>";
 								// Hidden field inputs the client_name automatically for consistency
 						   ?>
-                        Type: <input type="text" name="inputType">
-                        URL: <input type="text" name="inputUrl">
-                        Username: <input type="text" name="inputUsername">
-                        Password: <input type="text" name="inputPassword">
+                        <label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
+                        <label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
+                        <label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
+                        <label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
                         <input type="submit" name="saveButton" value="Save">
                     </form>
                 </div>
