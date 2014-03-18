@@ -189,26 +189,28 @@
 			  <div class="clientEntry">
               	  <?php
                      echo "<form>";
-                            echo "<input type='text' value='".$client_record['type']."' disabled />";
-                            echo "<input type='text' value='".$client_record['url']."' disabled />";
-                            echo "<input type='text' value='".$client_record['username']."' disabled />";
-                            echo "<input type='text' value='".$client_record['password']."' disabled />";
+                            echo "<input type='text' name='clientRecordType' value='".$client_record['type']."'  />";
+                            echo "<input type='text' name='clientRecordUrl' value='".$client_record['url']."'  />";
+                            echo "<input type='text' name='clientRecordUsername' value='".$client_record['username']."'  />";
+                            echo "<input type='text' name='clientRecordPassword' value='".$client_record['password']."'  />";
+								
+							   
                     echo "</form>";
                  ?>
                  
                 <!-- "Edit Entry" button -->
                 <?php
                     // button to enable editing of the fields
-                    /* echo "<form>";
+                    /*echo "<form>";
                         echo "<input id='inp' type='text' disabled />";
                         echo "<input id='edit' type='button' value='Edit Entry' />";
                     echo "</form>"; */
 					
                     // button to save edits
-                    echo "<form action='edit.php' method='post'>";
-                        echo "<input type='hidden' name='clientRecordId' value='".$cid."' />";
+                    /*echo "<form action='edit.php' method='post'>";
+                        echo "<input type='hidden' name='clientRecordId' value='".$client_record['id']."' />";
                         echo "<input type='submit' name='edit' value='Save Changes' />";
-                    echo "</form>";
+                    echo "</form>";*/
                ?>
                      
                 <!-- "Delete Entry" button -->

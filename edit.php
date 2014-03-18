@@ -14,7 +14,14 @@
 		// get value from hidden field in form
 		$cid = $_POST['clientRecordId'];
 		
-		$sql_edit = "UPDATE FROM test WHERE id='$cid'";
+		// get changed values from client info field
+		$ctype = $_POST['clientRecordType'];
+		$curl = $_POST['clientRecordUrl'];
+		$cuser = $_POST['clientRecordUsername'];
+		$cpass = $_POST['clientRecordPassword'];
+		
+		// SET column1=value1,column2=value2,...
+		$sql_edit = "UPDATE test SET type='$ctype', url='$curl', username='$cuser', password='$cpass' WHERE id='$cid'";
 		
 		// tells if added successfully or not
 		if (!mysqli_query($con,$sql_edit)) {
