@@ -51,4 +51,11 @@ $(document).ready(function(){
 	});
 	
 	
+	// draggable Client Names to reorder
+	/* $(function() {
+		$( "#sortable" ).sortable();
+		$( "#sortable" ).disableSelection();
+	}); */
+	
+	
 }); //end document.ready
