@@ -28,6 +28,7 @@
     
     <?php 
 		include('config.php');
+		//include('search.php');
 	?>
     
     <!-- SEARCH FUNCTION =============================================== -->
@@ -140,6 +141,7 @@
            <section class="newClientInfo slideInfo">
                 <form action="insert.php" method="post">
                     <label for='cli_name'>Client Name:</label><input id="cli_name" type="text" name="inputName">
+                    <br />
                     <label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
                     <label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
                     <br />
@@ -172,8 +174,7 @@
 			
 			// get each heading
 			foreach($client_list as $client_name => $client_records){
-				
-				?>
+			?>
 				
 				<div class="clientName slideTitle">
 					<h1><?php echo $client_name; ?></h1>
@@ -181,34 +182,28 @@
 				<section class="clientInfo slideInfo">
 				  
 			  <?php
-				
-				// get each entry
-				foreach($client_records as $client_record){
-
-				?>
+					// get each entry
+					foreach($client_records as $client_record){
+			  ?>
 			  <div class="clientEntry">
               	  <form class="cli_entry" action="edit.php" method="post">
-                    <!-- <div class="leftcol"> -->
-                        <label for="cli_type">Type:</label>
-                               <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
-                        <label for="cli_url">URL:</label>
-                               <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled  />
-                      <!-- </div> -->
-                        
-                      <!-- <div class="centercol"> -->
-                        <label for="cli_user">Username:</label>
-                                <input type="text" id="cli_user" class="makeEdit" name="clientRecordUsername" value="<?php echo $client_record['username'] ?>" disabled />
-                        <label for="cli_pass">Password:</label>
-                                <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPassword" value="<?php echo $client_record['password'] ?>" disabled />
-                       <!-- </div> -->
-                            
-                       <!-- <div class="rightcol"> -->
-                           <!-- hidden ID field to tell database what row it is -->
-                           <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
-                           <input id="edit" class="editButton" type="button" value="Edit Entry" />
-                           <input id="cancel" class="cancelButton" type="button" value="Cancel Edit" />
-                           <input type="submit" name="edit" value="Save Changes" />
-                       <!-- </div> -->
+                    <label for="cli_type">Type:</label>
+                         <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
+                    <label for="cli_url">URL:</label>
+                         <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled  />
+                    <br />
+
+                    <label for="cli_user">Username:</label>
+                          <input type="text" id="cli_user" class="makeEdit" name="clientRecordUsername" value="<?php echo $client_record['username'] ?>" disabled />
+                    <label for="cli_pass">Password:</label>
+                          <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPassword" value="<?php echo $client_record['password'] ?>" disabled />
+                   <br />
+
+                   <!-- hidden ID field to tell database what row it is -->
+                   <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
+                   <input id="edit" class="editButton" type="button" value="Edit Entry" />
+                   <input id="cancel" class="cancelButton" type="button" value="Cancel Edit" />
+                   <input type="submit" name="edit" value="Save Changes" />
                 </form>
 
                      
