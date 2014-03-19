@@ -190,16 +190,16 @@
 					foreach($client_records as $client_record){
 			  ?>
 			  <div class="clientEntry">
-              	  <form class="cli_entry" action="edit.php" method="post">
-                    <label for="cli_type">Type:</label>
+              	 <form class="cli_entry" action="edit.php" method="post">
+                   <label for="cli_type">Type:</label>
                          <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
-                    <label for="cli_url">URL:</label>
+                   <label for="cli_url">URL:</label>
                          <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled  />
-                    <br />
+                   <br />
 
-                    <label for="cli_user">Username:</label>
+                   <label for="cli_user">Username:</label>
                           <input type="text" id="cli_user" class="makeEdit" name="clientRecordUsername" value="<?php echo $client_record['username'] ?>" disabled />
-                    <label for="cli_pass">Password:</label>
+                   <label for="cli_pass">Password:</label>
                           <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPassword" value="<?php echo $client_record['password'] ?>" disabled />
                    <br />
 
