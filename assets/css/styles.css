@@ -1,8 +1,14 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@font-face {font-family: 'SoinSansPro-Roman';src: url('../fonts/2A5729_3_0.eot');src: url('../fonts/2A5729_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2A5729_3_0.woff') format('woff'),url('../fonts/2A5729_3_0.ttf') format('truetype'),url('../fonts/2A5729_3_0.svg#wf') format('svg');}
+
+@font-face {
+	font-family: 'Roboto', sans-serif;
+}
+
 body {
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -52,6 +58,8 @@ body {
 				padding: 10px;
 				width: 960px;
 				margin: 0 auto;
+				font-family: 'SoinSansPro-Roman';
+				text-transform: uppercase;
 			}
 				.clientName h1 {
 					margin: 0;
@@ -109,6 +117,8 @@ body {
 			padding: 10px;
 			width: 960px;
 			margin: 0 auto;
+			font-family: 'SoinSansPro-Roman';
+			text-transform: uppercase;
 		}
 				.newClientName h1 {
 					margin: 0;
