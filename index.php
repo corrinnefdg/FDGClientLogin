@@ -128,9 +128,10 @@
 					<input type="hidden" name="inputName" value="<?php echo $client_name ?>">
 					<label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
 					<label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
+					<br />
 					<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
 					<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
-					<input type="submit" name="saveButton" value="Save">
+					<button class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
 				</form>
 			</div>
 		</div>

@@ -1,6 +1,13 @@
 <?php
 // gets the information from the form and puts it in the database
 
+	// submit post info without page redirect
+	// http://code.tutsplus.com/tutorials/submit-a-form-without-page-refresh-using-jquery--net-59
+	
+	// curl
+	// http://stackoverflow.com/questions/7886778/posting-variables-from-php-to-another-php-without-page-redirect
+	// http://stackoverflow.com/questions/3045097/php-redirect-and-send-data-via-post
+
 	include('config.php');
 	
 	// get values from form
