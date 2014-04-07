@@ -22,7 +22,7 @@
 
 	<!-- header -->
     <header class="header">
-    	<h1><img src="assets/images/prismatic.png" alt="Prismatic" /></h1>
+    	<img src="assets/images/prismatic.png" alt="Prismatic" />
        
        <form id="searchBox" method="post" action="">
           <input type="text" name="find" placeholder="Search">
@@ -51,7 +51,7 @@
 				<br />
 				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
 				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
-				<button type="submit" name="saveButton" value="Save">Save</button>
+				<button class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
 			</form>
 	   </section>
            
@@ -105,22 +105,23 @@
 
 			   <!-- hidden ID field to tell database what row it is -->
 			   <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
-			   <input id="edit" class="editButton" type="button" value="Edit Entry" />
-			   <input id="cancel" class="cancelButton" type="button" value="Cancel Edit" />
-			   <input type="submit" name="edit" value="Save Changes" />
+			   <button class="icon icon-pencil editButton" id="edit" value="Edit Entry"></button>
+			   <button class="icon icon-close cancelButton" id="cancel" value="Cancel Edit"></button>
+			   <button class="icon icon-disk" type="submit" name="edit" value="Save Changes"></button>
 			</form>
 
 				 
 			<!-- "Delete Entry" button -->
 			<form action="delete.php" method="post">
 				<input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
-				<input type="submit" name="delete" value="Delete Entry" />
+				<button class="icon icon-remove" type="submit" name="delete" value="Delete Entry"></button>
 			</form>
 		  </div>
 		
 		<?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
 
-		<p class="addNew slideNew">Add New Entry</p>
+		<div class="newEntry">
+			<p class="icon icon-plus addNew slideNew"> New Entry</p>
 			<div class="addNewInfo">
 				<form action="insert.php" method="post">
 					<!-- Hidden field inputs the client_name automatically for consistency -->
@@ -132,6 +133,7 @@
 					<input type="submit" name="saveButton" value="Save">
 				</form>
 			</div>
+		</div>
 	</section>
         
       <?php } ?> <!-- end PHP foreach loop for creating each Client Name section -->

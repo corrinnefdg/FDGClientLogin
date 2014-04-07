@@ -41,7 +41,6 @@ body {
 	.header {
 		position: fixed;
 		top: 0;
-		width: 100%;
 		background-color: #fff;
 		padding: 20px;
 		margin: 0;
@@ -51,15 +50,17 @@ body {
 			box-shadow: 0 4px 10px -2px gray; 
 			/* border-bottom: 1px solid gray; */
 		}  
-	
-		header h1 {
-			color: #FF6E06;
+		header img {
+			height: 25%;
+			width: 25%;
 			margin: 0;
 			display: inline-block;
 		}
-			header h1 img {
-				height: 25%;
-				width: 25%;
+			header form {
+				display: inline-block;
+				position: absolute;
+				top: 20px;
+				right: 20px;
 			}
 			header h2 {
 				color: #FF6E06;
@@ -70,7 +71,7 @@ body {
 			}
 	
 	main {
-		margin-top: 100px;
+		margin-top: 75px;
 		padding: 50px;
 	}
 		.clientName {
@@ -95,14 +96,35 @@ body {
 			border-bottom: 1px solid #f26532;
 			border-left: 1px solid #f26532; */
 			margin: 0 auto;
-			padding: 15px 10px 5px 10px;
+			padding: 0 20px 20px 20px;
 			color: #555;
+			position: relative;
 		}
 			.clientEntry {
 				border-bottom: 1px dashed #bfb7ae;
-				padding: 0px 20px 20px 20px;
+				padding: 20px 0 20px 0;
+				position: relative;
 			}
-
+				.clientEntry .icon {
+					position: absolute;
+					cursor: pointer;
+				}
+					.clientEntry .icon-pencil {
+						top: 20px;
+						right: 0;
+					}
+					.clientEntry .icon-close {
+						top: 20px;
+						right: 40px;
+					}
+					.clientEntry .icon-remove {
+						top: 60px;
+						right: 0;
+					}
+					.clientEntry .icon-disk {
+						top: 20px; 
+						right: 80px;
+					}
 
 			input {
 				box-sizing: border-box;
@@ -119,16 +141,23 @@ body {
 				text-align: right;
 			}
 				
-			.addNew {
-				background-color: #8cbc19;
-				padding: 10px;
-				border-radius: 5px;
-				width: 115px;
-				border: 1px solid #555;
+			.newEntry {
+				position: relative;
+				display:block;
+				padding: 20px 0 35px 0;
 			}
-				.addNewInfo {
-					display: none;
+				.addNew {
+					position: absolute;
+					right: 0;
+					background-color: rgba(25,188,185,1.0);
+					padding: 10px;
+					width: 130px;
+					color: #003745;
+					text-transform: uppercase;
 				}
+					.addNewInfo {
+						display: none;
+					}
 		
 		.newClientName {
 			/* background-color: #8cbc19; */
@@ -153,7 +182,7 @@ body {
 			border-bottom: 1px solid #8cbc19;
 			border-left: 1px solid #8cbc19; */
 			margin: 0 auto;
-			padding: 15px 10px 5px 10px;
+			padding: 15px;
 			color: #555;
 		}
 		
