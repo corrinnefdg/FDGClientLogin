@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/* word-wrap: break-word; */
+
 @font-face {font-family: 'SoinSansPro-Roman';src: url('../fonts/2A5729_3_0.eot');src: url('../fonts/2A5729_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2A5729_3_0.woff') format('woff'),url('../fonts/2A5729_3_0.ttf') format('truetype'),url('../fonts/2A5729_3_0.svg#wf') format('svg');}
 
 @font-face {
