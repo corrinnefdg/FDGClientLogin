@@ -1,13 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/* word-wrap: break-word; */
+/* word-wrap: break-word; 
+for breaking long urls */
+
+@import url("../fonts/icons/style.css");
 
 @font-face {font-family: 'SoinSansPro-Roman';src: url('../fonts/2A5729_3_0.eot');src: url('../fonts/2A5729_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2A5729_3_0.woff') format('woff'),url('../fonts/2A5729_3_0.ttf') format('truetype'),url('../fonts/2A5729_3_0.svg#wf') format('svg');}
-
-@font-face {
-	font-family: 'Roboto', sans-serif;
-}
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -17,19 +16,40 @@ body {
 	background-color: #eae6df;
 }
 
+	.icon {
+		
+	}
+	
+
+	label, input {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		
+	}
+	button { 
+		background-color: rgba(25,188,185,1.0);
+		height: 32px;
+		width: 32px;
+		font-size: 20px;
+		border: none; 
+	}
+	
+	input[type=button], input[type=submit] {
+		font-family: 'Roboto', sans-serif;
+	}
+
 	.header {
 		position: fixed;
 		top: 0;
 		width: 100%;
-		background-color: #eae6df;
+		background-color: #fff;
 		padding: 20px;
 		margin: 0;
 		z-index: 100;
-		color: #eae6df;
 	}
 		.shadow {  
 			box-shadow: 0 4px 10px -2px gray; 
-			border-bottom: 1px solid gray;
+			/* border-bottom: 1px solid gray; */
 		}  
 	
 		header h1 {
@@ -55,10 +75,9 @@ body {
 	}
 		.clientName {
 				background-color: #f26532;
-				border: 1px solid #f26532;
+				/* border: 1px solid #f26532; */
 				border-bottom: 1px solid #eae6df;
-				padding: 10px;
-				width: 960px;
+				padding: 15px 10px 5px 10px;
 				margin: 0 auto;
 				font-family: 'SoinSansPro-Roman';
 				text-transform: uppercase;
@@ -70,14 +89,13 @@ body {
 				}
 				
 		.clientInfo {
-			background-color: #f6f2ec;
+			background-color: #fff;
 			display: none;
-			width: 960px;
-			border-right: 1px solid #f26532;
+			/* border-right: 1px solid #f26532;
 			border-bottom: 1px solid #f26532;
-			border-left: 1px solid #f26532;
+			border-left: 1px solid #f26532; */
 			margin: 0 auto;
-			padding: 10px;
+			padding: 15px 10px 5px 10px;
 			color: #555;
 		}
 			.clientEntry {
@@ -95,7 +113,7 @@ body {
 			}
 			label {
 				display: inline-block;
-				color: gray;
+				color: #003745;
 				margin-top: 15px;
 				width: 100px;
 				text-align: right;
@@ -113,30 +131,29 @@ body {
 				}
 		
 		.newClientName {
-			background-color: #8cbc19;
-			border: 1px solid #8cbc19;
+			/* background-color: #8cbc19; */
+			background-color: rgba(25,188,185,1.0);
+			/* border: 1px solid #8cbc19; */
 			border-bottom: 1px solid #eae6df;
-			padding: 10px;
-			width: 960px;
+			padding: 15px 10px 5px 10px;
 			margin: 0 auto;
 			font-family: 'SoinSansPro-Roman';
 			text-transform: uppercase;
 		}
 				.newClientName h1 {
 					margin: 0;
-					color: #FFF;
+					color: #003745;
 					font-size: 30px;
 				}
 				
 		.newClientInfo {
-			background-color: #f6f2ec;
+			background-color: #fff;
 			display: none;
-			width: 960px;
-			border-right: 1px solid #8cbc19;
+			/* border-right: 1px solid #8cbc19;
 			border-bottom: 1px solid #8cbc19;
-			border-left: 1px solid #8cbc19;
+			border-left: 1px solid #8cbc19; */
 			margin: 0 auto;
-			padding: 10px;
+			padding: 15px 10px 5px 10px;
 			color: #555;
 		}
 		
