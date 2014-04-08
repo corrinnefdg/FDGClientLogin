@@ -1,12 +1,10 @@
 <?php
-// gets the information from the form and puts it in the database
+// gets the information from the form (index.php) and puts it in the database
 
 	// submit post info without page redirect
 	// http://code.tutsplus.com/tutorials/submit-a-form-without-page-refresh-using-jquery--net-59
 	
-	// curl
-	// http://stackoverflow.com/questions/7886778/posting-variables-from-php-to-another-php-without-page-redirect
-	// http://stackoverflow.com/questions/3045097/php-redirect-and-send-data-via-post
+	// http://stackoverflow.com/questions/17267468/jquery-variable-to-php-variable
 
 	include('config.php');
 	
@@ -23,6 +21,7 @@
 		die('Error: ' . mysqli_error($con));
 	}
 	echo "1 record added";
+	var_dump ($_POST);
 	
 	// close connection 
 	mysqli_close($con);

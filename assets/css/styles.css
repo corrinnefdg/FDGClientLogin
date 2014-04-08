@@ -80,10 +80,9 @@ body {
 	}
 		.clientName {
 				background-color: #f26532;
-				/* border: 1px solid #f26532; */
-				border-bottom: 1px solid #eae6df;
 				padding: 15px 10px 5px 10px;
 				margin: 0 auto;
+				margin-bottom: 1px;
 				cursor: pointer;
 				font-family: 'SoinSansPro-Roman';
 				text-transform: uppercase;
@@ -172,12 +171,10 @@ body {
 					}
 		
 		.newClientName {
-			/* background-color: #8cbc19; */
 			background-color: rgba(25,188,185,1.0);
-			/* border: 1px solid #8cbc19; */
-			border-bottom: 1px solid #eae6df;
 			padding: 15px 10px 5px 10px;
 			margin: 0 auto;
+			margin-bottom: 1px;
 			cursor: pointer;
 			font-family: 'SoinSansPro-Roman';
 			text-transform: uppercase;
