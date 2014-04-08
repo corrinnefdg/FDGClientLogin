@@ -93,7 +93,7 @@
 				<br />
 				Username: <input type="text" name="inputUsername">
 				Password: <input type="text" name="inputPassword">
-				<input type="submit" name="saveButton" value="Save">
+				<input type="submit" name="addButton" value="Add">
 			</form>
 		</div>
 </section>

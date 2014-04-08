@@ -51,7 +51,7 @@
 				<br />
 				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
 				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
-				<button class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
+				<button class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
 			</form>
 	   </section>
            
@@ -105,9 +105,9 @@
 				
 				   <!-- hidden ID field to tell database what row it is -->
 				   <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
-				   <button class="icon icon-pencil editButton" id="edit" value="Edit Entry"></button>
-				   <button class="icon icon-close cancelButton" id="cancel" value="Cancel Edit"></button>
-				   <button class="icon icon-disk" type="submit" name="edit" value="Save Changes"></button>
+				   <button class="icon icon-pencil editButton" type="button" id="edit" value="Edit Entry"></button>
+				   <button class="icon icon-close cancelButton test" type="button" id="cancel" value="Cancel Edit"></button>
+				   <button class="icon icon-disk saveButton test" type="submit" name="edit" value="Save Changes"></button>
 				</form>
 				
 					 
@@ -131,7 +131,7 @@
 					<br />
 					<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
 					<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
-					<button id="addButton" class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
+					<button id="addButton" class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
 				</form>
 			</div>
 		</div>

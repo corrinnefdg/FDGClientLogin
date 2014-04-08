@@ -8,6 +8,16 @@
 
 	include('config.php');
 	
+	/* if(isset($_POST["data_sent"])){
+		$data_sent_json = $_POST["data_sent"];
+		$JSONArray  = json_decode($data_sent_json, true); //returns null if not decoded
+		//Values can now be accessed like standard PHP array
+		if($JSONArray !== null){ 
+			$inputName = $JSONArray["inputName"];
+			$inputType = $JSONArray["inputType"];
+		}
+	} */
+	
 	$inputName = $_POST['inputName'];
 	$inputType = $_POST['inputType'];
 	$inputUrl = $_POST['inputUrl'];

@@ -23,15 +23,26 @@ $(document).ready(function(){
 		var cli_user = $(target_form).children('#cli_user').val();
 		var cli_pass = $(target_form).children('#cli_pass').val();
 
+		/* var data_sent = {
+			"inputName" : cli_name, 
+			"inputType" : cli_type, 
+			"inputUrl" : cli_url,
+			"inputUser" : cli_user,
+			"inputPass" : cli_pass
+		};
+		var data_sent_encoded = JSON.stringify(data_sent); */
+
 		$.ajax({
 			type: 'POST', //or GET
 			url: 'insert.php', // form's destination
-			data: ({inputName:cli_name, 
-				inputType:cli_type, 
-				inputUrl:cli_url,
-				inputUser:cli_user,
-				inputPass:cli_pass
-			}), // send each of the form's keys: values
+			data: { 
+				//"data_sent" : data_sent_encoded
+				"inputName" : cli_name, 
+				"inputType" : cli_type, 
+				"inputUrl" : cli_url,
+				"inputUser" : cli_user,
+				"inputPass" : cli_pass
+			}, // send each of the form's keys: values
 			contentType: 'application/json; charset=utf-8',
 			//processData: 'false',
 			dataType: 'json',
@@ -48,6 +59,8 @@ $(document).ready(function(){
 		});
 		return false; //so the page won't refresh
 	});
+	
+	
 	
 	
 	
@@ -87,16 +100,41 @@ $(document).ready(function(){
 	});
 	
 	
+	
 	// make form fields editable
 	$(".editButton").click(function(){
-		$(this).siblings().removeAttr('disabled');
+			
+		$(this).toggle("left") // hide "edit" button
+		.next(".cancelButton").toggle("right") // show "cancel edit" button
+		.next(".saveButton").toggle("right") // show "save edit" button
+		.siblings().removeAttr('disabled'); // remove "disabled" attribute from form fields
+
 	});
+	
+	
+	// make form fields editable
+	/* $(".editButton").click(function(){
+		
+		$(this).removeClass("icon-pencil").addClass("icon-close") // change icon from "edit" to "cancel edit" 
+		.siblings().removeAttr('disabled') // remove disabled attribute from form fields
+		.next(".saveButton").toggle("right"); // make "save" button appear to save edits
+		
+		if ($(".editButton").hasClass("icon-close")){
+			console.log("words");
+			
+			$(".editButton").click(function(){
+				$(this).siblings().attr('disabled');
+			});
+		};
+
+	}); */
+	
 	
 	// trying to cancel edit too - doesn't work
 	// might toggle above code instead
-	$(".cancelButton").click(function(){
+	/* $(".cancelButton").click(function(){
 		$(this).siblings().attr('disabled');
-	});
+	}); */
 	
 	
 	// draggable Client Names to reorder

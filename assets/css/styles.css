@@ -119,10 +119,12 @@ body {
 					.clientEntry .icon-pencil {
 						top: 20px;
 						right: 0;
+						z-index: 10;
 					}
 					.clientEntry .icon-close {
 						top: 20px;
-						right: 40px;
+						right: 0px;
+						display: none;
 					}
 					.clientEntry .icon-remove {
 						top: 60px;
@@ -130,7 +132,8 @@ body {
 					}
 					.clientEntry .icon-disk {
 						top: 20px; 
-						right: 80px;
+						right: 40px;
+						display: none;
 					}
 
 			input {
