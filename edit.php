@@ -10,8 +10,8 @@
 		// get changed values from client info field
 		$ctype = $_POST['clientRecordType'];
 		$curl = $_POST['clientRecordUrl'];
-		$cuser = $_POST['clientRecordUsername'];
-		$cpass = $_POST['clientRecordPassword'];
+		$cuser = $_POST['clientRecordUser'];
+		$cpass = $_POST['clientRecordPass'];
 		
 		// SET column1=value1,column2=value2,...
 		$sql_edit = "UPDATE test SET type='$ctype', url='$curl', username='$cuser', password='$cpass' WHERE id='$cid'";

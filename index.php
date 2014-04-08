@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-<script src="assets/js/functions.js"></script>
+<script src="functions.js"></script>
 
 </head>
 
@@ -49,8 +49,8 @@
 				<label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
 				<label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
 				<br />
-				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
-				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
+				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
+				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
 				<button class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
 			</form>
 	   </section>
@@ -98,9 +98,9 @@
 				   <br />
 				
 				   <label for="cli_user">Username:</label>
-						  <input type="text" id="cli_user" class="makeEdit" name="clientRecordUsername" value="<?php echo $client_record['username'] ?>" disabled />
+						  <input type="text" id="cli_user" class="makeEdit" name="clientRecordUser" value="<?php echo $client_record['username'] ?>" disabled />
 				   <label for="cli_pass">Password:</label>
-						  <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPassword" value="<?php echo $client_record['password'] ?>" disabled />
+						  <input type="text" id="cli_pass" class="makeEdit" name="clientRecordPass" value="<?php echo $client_record['password'] ?>" disabled />
 				   <br />
 				
 				   <!-- hidden ID field to tell database what row it is -->
@@ -126,11 +126,11 @@
 				<form method="post"><!-- action="insert.php"  -->
 					<!-- Hidden field inputs the client_name automatically for consistency -->
 					<input value="<?php echo $client_name ?>" id="cli_name" type="hidden" name="inputName">
-					<label for='cli_type'>Type:</label><input id="cli_type" class="cliType" type="text" name="inputType">
+					<label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
 					<label for='cli_url'>URL:</label><input id="cli_url" type="text" name="inputUrl">
 					<br />
-					<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUsername">
-					<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPassword">
+					<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
+					<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
 					<button id="addButton" class="icon icon-checkmark" type="submit" name="saveButton" value="Save"></button>
 				</form>
 			</div>
