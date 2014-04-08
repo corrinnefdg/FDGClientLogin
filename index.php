@@ -106,8 +106,8 @@
 				   <!-- hidden ID field to tell database what row it is -->
 				   <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
 				   <button class="icon icon-pencil editButton" type="button" id="edit" value="Edit Entry"></button>
-				   <button class="icon icon-close cancelButton test" type="button" id="cancel" value="Cancel Edit"></button>
-				   <button class="icon icon-disk saveButton test" type="submit" name="edit" value="Save Changes"></button>
+				   <button class="icon icon-close cancelButton" type="button" id="cancel" value="Cancel Edit"></button>
+				   <button class="icon icon-disk saveButton" type="submit" name="edit" value="Save Changes"></button>
 				</form>
 				
 					 

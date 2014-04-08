@@ -82,19 +82,16 @@ $(document).ready(function(){
 		});
   
 	
-	// function to make the header shadow appear once the page is scrolled down
+	// make the header shadow appear once the page is scrolled down
 	$(window).scroll(function() { 
 
 		//if window is scrolled any more than 0 the shadow appears
-		if($(window).scrollTop() > 0) 
-		{
-			if(!$(".header").hasClass('shadow'))
-			{
+		if($(window).scrollTop() > 0) {
+			if(!$(".header").hasClass('shadow')){
 				$(".header").addClass('shadow');
 			}
 		}
-		else
-		{
+		else {
 			$('.header').removeClass('shadow');
 		}
 	});
@@ -105,39 +102,28 @@ $(document).ready(function(){
 	$(".editButton").click(function(){
 			
 		$(this).toggle("left") // hide "edit" button
-		.next(".cancelButton").toggle("right") // show "cancel edit" button
-		.next(".saveButton").toggle("right") // show "save edit" button
-		.siblings().removeAttr('disabled'); // remove "disabled" attribute from form fields
+		.next(".cancelButton").toggle("right") // show "cancel" button
+		.next(".saveButton").toggle("right") // show "save" button
+		.siblings().removeProp('disabled'); // remove "disabled" attribute from form fields
 
 	});
 	
 	
-	// make form fields editable
-	/* $(".editButton").click(function(){
+	// cancel edit button
+	$(".cancelButton").click(function(){
 		
-		$(this).removeClass("icon-pencil").addClass("icon-close") // change icon from "edit" to "cancel edit" 
-		.siblings().removeAttr('disabled') // remove disabled attribute from form fields
-		.next(".saveButton").toggle("right"); // make "save" button appear to save edits
+		//$(this).toggle("left") // hide "cancel" button
+		//.next(".saveButton").toggle("left").next(".editButton").toggle("right"); // hide "save" button
 		
-		if ($(".editButton").hasClass("icon-close")){
-			console.log("words");
-			
-			$(".editButton").click(function(){
-				$(this).siblings().attr('disabled');
-			});
-		};
+		$(this).siblings().prop('disabled', true);
+		console.log("words");
 
-	}); */
+	});
 	
-	
-	// trying to cancel edit too - doesn't work
-	// might toggle above code instead
-	/* $(".cancelButton").click(function(){
-		$(this).siblings().attr('disabled');
-	}); */
 	
 	
 	// draggable Client Names to reorder
+	// conflicts with slidetoggles
 	/* $(function() {
 		$( "#sortable" ).sortable();
 		$( "#sortable" ).disableSelection();
