@@ -10,42 +10,20 @@ $(document).ready(function(){
 		console.log("clicked.");
 		
 		var target_form = $(this).closest('form');
-		
-		/* $('input').each(function() {
-			var name = $('input').attr('name');
-		}); */
-		
-		var cli_name = $(target_form).children('#cli_name').val();
-			console.log(cli_name);
-		var cli_type = $(target_form).children('#cli_type').val();
-			console.log(cli_type);
-		var cli_url = $(target_form).children('#cli_url').val();
-		var cli_user = $(target_form).children('#cli_user').val();
-		var cli_pass = $(target_form).children('#cli_pass').val();
-
-		/* var data_sent = {
-			"inputName" : cli_name, 
-			"inputType" : cli_type, 
-			"inputUrl" : cli_url,
-			"inputUser" : cli_user,
-			"inputPass" : cli_pass
-		};
-		var data_sent_encoded = JSON.stringify(data_sent); */
 
 		$.ajax({
 			type: 'POST', //or GET
 			url: 'insert.php', // form's destination
 			data: { 
-				//"data_sent" : data_sent_encoded
-				"inputName" : cli_name, 
-				"inputType" : cli_type, 
-				"inputUrl" : cli_url,
-				"inputUser" : cli_user,
-				"inputPass" : cli_pass
+				inputName:$(target_form).children('#cli_name').val(), 
+				inputType:$(target_form).children('#cli_type').val(), 
+				inputUrl:$(target_form).children('#cli_url').val(),
+				inputUser:$(target_form).children('#cli_user').val(),
+				inputPass:$(target_form).children('#cli_pass').val()
 			}, // send each of the form's keys: values
-			contentType: 'application/json; charset=utf-8',
+			// contentType: 'application/json; charset=utf-8',
 			//processData: 'false',
-			dataType: 'jsonp',
+			dataType: 'text',
 			success: function(data){
 				console.log("Great success!");
 				console.log(data);
