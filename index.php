@@ -94,7 +94,7 @@
 				   <label for="cli_type">Type:</label>
 						 <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
 				   <label for="cli_url">URL:</label>
-						 <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled  />
+						 <input type="text" id="cli_url" class="makeEdit" name="clientRecordUrl" value="<?php echo $client_record['url'] ?>" disabled />
 				   <br />
 				
 				   <label for="cli_user">Username:</label>

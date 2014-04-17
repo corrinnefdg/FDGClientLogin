@@ -45,7 +45,7 @@ $(document).ready(function(){
 			}, // send each of the form's keys: values
 			contentType: 'application/json; charset=utf-8',
 			//processData: 'false',
-			dataType: 'json',
+			dataType: 'jsonp',
 			success: function(data){
 				console.log("Great success!");
 				console.log(data);
@@ -104,7 +104,7 @@ $(document).ready(function(){
 		$(this).toggle("left") // hide "edit" button
 		.next(".cancelButton").toggle("right") // show "cancel" button
 		.next(".saveButton").toggle("right") // show "save" button
-		.siblings().removeProp('disabled'); // remove "disabled" attribute from form fields
+		.siblings().removeAttr('disabled'); // remove "disabled" attribute from form fields
 
 	});
 	
@@ -112,11 +112,13 @@ $(document).ready(function(){
 	// cancel edit button
 	$(".cancelButton").click(function(){
 		
-		//$(this).toggle("left") // hide "cancel" button
-		//.next(".saveButton").toggle("left").next(".editButton").toggle("right"); // hide "save" button
+		$(this).toggle("left") // hide "cancel" button
+		.next(".saveButton").toggle("left"); // hide "save" button		
 		
-		$(this).siblings().prop('disabled', true);
-		console.log("words");
+		// add "disabled" attribute to form, except "save" and "edit" buttons in case user wants to edit again
+		$(this).siblings().not(".editButton").not(".saveButton")
+		.attr('disabled',!$(this).siblings().not(".editButton").not(".saveButton").attr('disabled')); 
+		$(this).prev(".editButton").toggle("right"); // show "edit" button	
 
 	});
 	
