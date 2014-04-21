@@ -156,6 +156,11 @@ body {
 				display:block;
 				padding: 20px 0 35px 0;
 			}
+				.p-success {
+					position: absolute;
+					right: 185px;
+					top: 72px;
+				}
 				.addNew {
 					position: absolute;
 					right: 0;

@@ -90,7 +90,7 @@
 				foreach($client_records as $client_record){
 			?>
 			<div class="clientEntry">
-				 <form class="cli_entry" action="edit.php" method="post">
+				 <form class="cli_entry" method="post">
 				   <label for="cli_type">Type:</label>
 						 <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
 				   <label for="cli_url">URL:</label>
@@ -104,16 +104,16 @@
 				   <br />
 				
 				   <!-- hidden ID field to tell database what row it is -->
-				   <input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
-				   <button class="icon icon-pencil editButton" type="button" id="edit" value="Edit Entry"></button>
+				   <input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
+				   <button class="icon icon-pencil editButton" type="button" value="Edit Entry"></button>
 				   <button class="icon icon-close cancelButton" type="button" id="cancel" value="Cancel Edit"></button>
-				   <button class="icon icon-disk saveButton" type="submit" name="edit" value="Save Changes"></button>
+				   <button id="saveButton" class="icon icon-disk saveButton" type="submit" name="edit" value="Save Changes"></button>
 				</form>
 				
 					 
 				<!-- "Delete Entry" button -->
 				<form action="delete.php" method="post">
-					<input type="hidden" name="clientRecordId" value="<?php echo $client_record['id'] ?>" />
+					<input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
 					<button class="icon icon-remove" type="submit" name="delete" value="Delete Entry"></button>
 				</form>
 		  </div>

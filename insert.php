@@ -22,7 +22,7 @@
 	if (!mysqli_query($con,$sql)) {
 		die('Error: ' . mysqli_error($con));
 	}
-	echo "1 record added";
+	echo "Entry added";
 	//var_dump ($_POST);
 	
 	// close connection 
