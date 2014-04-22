@@ -4,6 +4,7 @@
 
 	// get value from hidden field in form
 	$cid = $_POST['clientRecordId'];
+	echo $cid;
 	
 	// get changed values from client info field
 	$ctype = $_POST['clientRecordType'];
