@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <title>Prismatic - Client Login List</title>
 
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 <script src="functions.js"></script>
 
 </head>
@@ -24,7 +22,7 @@
     <header class="header">
     	<img src="assets/images/prismatic.png" alt="Prismatic" />
        
-       <form id="searchBox" method="post" action="">
+       <form id="searchBox" method="post" action="search.php">
           <input type="text" name="find" placeholder="Search">
           <button class="icon icon-search" type="submit"></button>
        </form>
@@ -34,7 +32,6 @@
     
     <?php 
 		include('config.php');
-		include('search.php');
 	?>
 
  
@@ -43,7 +40,7 @@
 		<h1>Add New Client</h1>
 	</div>
 	   <section class="newClientInfo slideInfo">
-			<form action="insert.php" method="post">
+			<form method="post">
 				<label for='cli_name'>Client Name:</label><input id="cli_name" type="text" name="inputName">
 				<br />
 				<label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
@@ -51,7 +48,7 @@
 				<br />
 				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
 				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
-				<button class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
+				<button id="addButton"  class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
 			</form>
 	   </section>
            
@@ -90,7 +87,7 @@
 				foreach($client_records as $client_record){
 			?>
 			<div class="clientEntry">
-				 <form class="cli_entry" method="post">
+				 <form class="cli_entry" method="post"><!-- action="edit.php"  -->
 				   <label for="cli_type">Type:</label>
 						 <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
 				   <label for="cli_url">URL:</label>
@@ -112,9 +109,9 @@
 				
 					 
 				<!-- "Delete Entry" button -->
-				<form action="delete.php" method="post">
+				<form method="post"><!-- action="delete.php"  -->
 					<input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
-					<button class="icon icon-remove" type="submit" name="delete" value="Delete Entry"></button>
+					<button id="deleteButton" class="icon icon-remove deleteButton" type="submit" name="delete" value="Delete Entry"></button>
 				</form>
 		  </div>
 		

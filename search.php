@@ -1,4 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prismatic - Client Login List</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="functions.js"></script>
+
+</head>
+
+<body>
+
+<!-- header -->
+    <header class="header">
+    	<img src="assets/images/prismatic.png" alt="Prismatic" />
+       
+		<form id="searchBox" method="post" action="search.php">
+			<input type="text" name="find" placeholder="Search">
+			<button class="icon icon-search" type="submit"></button>
+		</form>
+    </header>
+    
+   	<main>
+
 <?php
+
+	include('config.php');
+
 	//SEARCH FUNCTION ===============================================
 
 	if (isset($_POST['find'])) {
@@ -68,23 +105,23 @@
 	foreach($client_records as $client_record){
 ?>
 	<div class="clientEntry">
-	  <ul>
-		<li>Type:<p><?php echo $client_record['type']; ?></p></li>
-		<li>URL:<p><?php echo $client_record['url']; ?></p></li>
-		<li>Username:<p><?php echo $client_record['username']; ?></p></li>
-		<li>Password:<p><?php echo $client_record['password']; ?></p></li>
-		<li>
+		<ul>
+			<li>Type:<p><?php echo $client_record['type']; ?></p></li>
+			<li>URL:<p><?php echo $client_record['url']; ?></p></li>
+			<li>Username:<p><?php echo $client_record['username']; ?></p></li>
+			<li>Password:<p><?php echo $client_record['password']; ?></p></li>
+			<li>
 				<form action="delete.php" method="post">
 					<input type="hidden" name="clientRecordId" value="<?php echo $cid ?>" />
 					<input type='submit' name='delete' value='Delete Entry' />
 				</form>
-		  </li>
-	  </ul>
-   </div>
+			</li>
+		</ul>
+	</div>
    
-   <?php } ?> <!-- end PHP foreach loop creating each Client Entry -->
+	<?php } ?> <!-- end PHP foreach loop that creates each Client Entry -->
    
-	 <p class="addNew slideNew">Add New Entry</p>
+		<p class="addNew slideNew">Add New Entry</p>
 		<div class="addNewInfo">
 			<form action="insert.php" method="post">
 				Client Name: <input type="text" name="inputName">
@@ -98,3 +135,8 @@
 		</div>
 </section>
 <?php } ?> <!-- end PHP foreach loop creating each Client Name section -->
+
+</main>
+
+</body>
+</html>
