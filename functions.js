@@ -1,12 +1,44 @@
 // JavaScript Document
 
+// user login / user account system
+// http://www.php-login.net/
+// http://tutorialzine.com/2009/10/cool-login-system-php-jquery/
+// http://webdevrefinery.com/forums/topic/3280-how-to-make-a-user-account-system/
+// http://stackoverflow.com/questions/3076993/creating-a-webpage-with-user-accounts-what-do-i-need-to-keep-in-mind
 
 $(document).ready(function(){
 	
 	
+	// Delete client entry
+	$('#deleteButton').click(function(){
+		
+		var target_form = $(this).closest('form');
+
+		$.ajax({
+			type: 'POST',
+			url: 'delete.php', // form's destination
+			data: { 
+				clientRecordId:$(target_form).children('#cli_id').val()
+			}, // send each of the form's keys: values
+			// contentType: 'application/json; charset=utf-8',
+			//processData: 'false',
+			dataType: 'text',
+			success: function(data){
+				console.log("Great success!");
+				$('.clientEntry').append("<p class='p-success'>Entry removed!</p>");
+				//$('#final_msg').fadeIn().delay(10000).fadeOut();
+			},
+			error: function(data){
+				// shit went wrong
+				console.log("No success.");
+			}
+		});
+		return false; //so the page won't refresh
+	});
+	
 	
 	// Edit existing client entry
-	$('#saveButton').click(function(){
+	$('.saveButton').click(function(){
 		
 		var target_form = $(this).closest('form');
 
@@ -27,7 +59,7 @@ $(document).ready(function(){
 			success: function(data){
 				console.log("Great success!");
 				console.log(data);
-				$('.newEntry').append("<p class='p-edit'>Entry edited!</p>");
+				$(target_form).append("<p class='p-edit'>Entry edited!</p>");
 				//$('#final_msg').fadeIn().delay(10000).fadeOut();
 			},
 			error: function(data){

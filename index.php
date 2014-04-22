@@ -90,7 +90,7 @@
 				foreach($client_records as $client_record){
 			?>
 			<div class="clientEntry">
-				 <form class="cli_entry" method="post">
+				 <form class="cli_entry" method="post"><!-- action = edit.php -->
 				   <label for="cli_type">Type:</label>
 						 <input type="text" id="cli_type" class="makeEdit" name="clientRecordType" value="<?php echo $client_record['type'] ?>" disabled />
 				   <label for="cli_url">URL:</label>
@@ -112,7 +112,7 @@
 				
 					 
 				<!-- "Delete Entry" button -->
-				<form action="delete.php" method="post">
+				<form method="post">
 					<input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
 					<button class="icon icon-remove" type="submit" name="delete" value="Delete Entry"></button>
 				</form>
