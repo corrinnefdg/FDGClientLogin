@@ -1,5 +1,6 @@
 <?php
-// gets the information from the form (index.php) and puts it in the database
+
+	// gets the information from the form (index.php) and puts it in the database
 
 	include('config.php');
 	
@@ -23,7 +24,6 @@
 		die('Error: ' . mysqli_error($con));
 	}
 	echo "Entry added";
-	//var_dump ($_POST);
 	
 	// close connection 
 	mysqli_close($con);

@@ -10,7 +10,7 @@
 	if (!mysqli_query($con,$sql_delete)) {
 		die('Error: ' . mysqli_error($con));
 	}
-	echo "1 record deleted";
+	echo "Entry deleted";
 	
 	// close connection 
 	mysqli_close($con);

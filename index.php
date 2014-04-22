@@ -107,14 +107,14 @@
 				   <input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
 				   <button class="icon icon-pencil editButton" type="button" value="Edit Entry"></button>
 				   <button class="icon icon-close cancelButton" type="button" id="cancel" value="Cancel Edit"></button>
-				   <button id="saveButton" class="icon icon-disk saveButton" type="submit" name="edit" value="Save Changes"></button>
+				   <button class="icon icon-disk saveButton" type="submit" name="edit" value="Save Changes"></button>
 				</form>
 				
 					 
 				<!-- "Delete Entry" button -->
-				<form method="post">
+				<form method="post"><!-- action = delete.php -->
 					<input type="hidden" name="clientRecordId" id="cli_id" value="<?php echo $client_record['id'] ?>" />
-					<button class="icon icon-remove" type="submit" name="delete" value="Delete Entry"></button>
+					<button class="icon icon-remove deleteButton" type="submit" name="delete" value="Delete Entry"></button>
 				</form>
 		  </div>
 		

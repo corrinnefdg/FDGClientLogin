@@ -1,10 +1,11 @@
 <?php
 
+	// edits client entry in database based on clientRecordId ($cid)
+
 	include('config.php');
 
 	// get value from hidden field in form
 	$cid = $_POST['clientRecordId'];
-	echo $cid;
 	
 	// get changed values from client info field
 	$ctype = $_POST['clientRecordType'];
