@@ -24,7 +24,7 @@
     <header class="header">
     	<img src="assets/images/prismatic.png" alt="Prismatic" />
        
-       <form id="searchBox" method="post" action="">
+       <form id="searchBox" method="post" action="search.php">
           <input type="text" name="find" placeholder="Search">
           <button class="icon icon-search" type="submit"></button>
        </form>
@@ -34,7 +34,6 @@
     
     <?php 
 		include('config.php');
-		include('search.php');
 	?>
 
  
@@ -43,7 +42,7 @@
 		<h1>Add New Client</h1>
 	</div>
 	   <section class="newClientInfo slideInfo">
-			<form action="insert.php" method="post">
+			<form method="post"><!-- action = insert.php -->
 				<label for='cli_name'>Client Name:</label><input id="cli_name" type="text" name="inputName">
 				<br />
 				<label for='cli_type'>Type:</label><input id="cli_type" type="text" name="inputType">
@@ -51,7 +50,7 @@
 				<br />
 				<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
 				<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
-				<button class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
+				<button class="icon icon-checkmark addButton" type="submit" name="addButton" value="Add"></button>
 			</form>
 	   </section>
            
@@ -131,7 +130,7 @@
 					<br />
 					<label for='cli_user'>Username:</label><input id="cli_user" type="text" name="inputUser">
 					<label for='cli_pass'>Password:</label><input id="cli_pass" type="text" name="inputPass">
-					<button id="addButton" class="icon icon-checkmark" type="submit" name="addButton" value="Add"></button>
+					<button class="icon icon-checkmark addButton" type="submit" name="addButton" value="Add"></button>
 				</form>
 			</div>
 		</div>

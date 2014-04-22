@@ -10,7 +10,6 @@ $(document).ready(function(){
 	
 	// Delete client entry
 	$('.deleteButton').click(function(){
-		console.log("click");
 		
 		var target_form = $(this).closest('form');
 
@@ -25,8 +24,8 @@ $(document).ready(function(){
 			dataType: 'text',
 			success: function(data){
 				console.log("Great success!");
-				$(target_form).append("<p class='p-success'>Entry removed!</p>").parent().fadeOut(2000);
-				//$('#final_msg').fadeIn().delay(10000).fadeOut();
+				// fades out entry upon delete
+				$(target_form).append("<p class='p-success'>Entry removed!</p>").parent().fadeOut(2000); 
 			},
 			error: function(data){
 				// shit went wrong
@@ -107,7 +106,7 @@ $(document).ready(function(){
 	
 
 	// Insert new client entry
-	$('#addButton').click(function(){
+	$('.addButton').click(function(){
 		
 		var target_form = $(this).closest('form');
 
@@ -126,7 +125,7 @@ $(document).ready(function(){
 			dataType: 'text',
 			success: function(data){
 				console.log("Great success!");
-				$('.newEntry').append("<p class='p-success'>Entry added!</p>");
+				$(target_form).append("<p class='p-success'>Entry added!</p>");
 				//$('#final_msg').fadeIn().delay(10000).fadeOut();
 			},
 			error: function(data){

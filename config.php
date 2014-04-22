@@ -1,5 +1,7 @@
 <?php
 
+	// http://code.tutsplus.com/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059
+
 	// define constants for connecting
 	define('DB_USER', 'test_user');
 	define('DB_PASSWORD', 'test');

@@ -1,5 +1,6 @@
 <?php
 	//SEARCH FUNCTION ===============================================
+	include('config.php');
 
 	if (isset($_POST['find'])) {
 		
@@ -8,7 +9,7 @@
 		// Perform a bit of filtering
 		$find = strtoupper($find);
 		$find = strip_tags($find);
-		$find = trim ($find);
+		$find = trim($find);
 		
 		// If they did not enter a search term we give them an error.
 		// Or if $find is empty after stripping tags and filtering

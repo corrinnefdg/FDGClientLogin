@@ -9,7 +9,6 @@
 	$inputUrl = $_POST['inputUrl'];
 	$inputUser = $_POST['inputUser'];
 	$inputPass = $_POST['inputPass'];
-	echo $inputName;
 	
 	// get values from form
 	$sql = "INSERT INTO test (client_name, type, url, username, password)
