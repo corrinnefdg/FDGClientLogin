@@ -59,6 +59,7 @@ $(document).ready(function(){
 				console.log("Great success!");
 				console.log(data);
 				$(target_form).append("<p class='p-success'>Entry edited!</p>");
+				$('.p-success').fadeOut(3000);
 				//$('#final_msg').fadeIn().delay(10000).fadeOut();
 			},
 			error: function(data){
@@ -126,6 +127,7 @@ $(document).ready(function(){
 			success: function(data){
 				console.log("Great success!");
 				$(target_form).append("<p class='p-success'>Entry added!</p>");
+				$('.p-success').fadeOut(3000);
 				//$('#final_msg').fadeIn().delay(10000).fadeOut();
 			},
 			error: function(data){
